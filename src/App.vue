@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TopMenu v-if="user.authenticated" />
+    <TopMenu v-if="authenticated" />
     <router-view/>
   </div>
 </template>
@@ -12,9 +12,7 @@ import TopMenu from '@/components/TopMenu.vue';
 export default {
   name: 'App',
   data() {
-    return {
-      user: this.$store.state.UserStore,
-    };
+    return this.$store.state.UserStore;
   },
   methods: {
     logout() {
