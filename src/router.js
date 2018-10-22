@@ -4,25 +4,9 @@ import * as blockstack from 'blockstack';
 import store from './store';
 
 import Home from './views/Home.vue';
-import Auth from './views/Auth.vue';
 import Dashboard from './views/Dashboard.vue';
 
 Vue.use(Router);
-
-const ifNotAuthenticated = (to, from, next) => {
-  if (blockstack.isSignInPending()) {
-    blockstack.handlePendingSignIn()
-      .then(() => {
-        store.state.isAuthenticated = true;
-        next('/dashboard');
-      });
-    return;
-  } else if (!blockstack.isUserSignedIn()) {
-    next();
-    return;
-  }
-  next('/');
-};
 
 const resolveAuth = (to, from, next) => {
   if (blockstack.isUserSignedIn()) {
@@ -33,8 +17,8 @@ const resolveAuth = (to, from, next) => {
     blockstack.handlePendingSignIn()
       .then(() => {
         store.state.isAuthenticated = true;
+        next('/dashboard');
       });
-    next('/dashboard');
     return;
   }
   next();
@@ -45,7 +29,7 @@ const ifAuthenticated = (to, from, next) => {
     next();
     return;
   }
-  next('/auth');
+  next('/');
 };
 
 export default new Router({
@@ -62,12 +46,6 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: () => import('./views/About.vue'),
-    },
-    {
-      path: '/auth',
-      name: 'auth',
-      component: Auth,
-      beforeEnter: ifNotAuthenticated,
     },
     {
       path: '/dashboard',

@@ -8,19 +8,19 @@
 <script>
 import * as blockstack from 'blockstack';
 import TopMenu from '@/components/TopMenu.vue';
-import store from './store';
+import { mapState } from 'vuex';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      isAuthenticated: store.state.isAuthenticated,
-    };
-  },
   methods: {
     logout() {
       blockstack.signUserOut(window.location.origin);
     },
+  },
+  computed: {
+    ...mapState([
+      'isAuthenticated',
+    ]),
   },
   components: {
     TopMenu,

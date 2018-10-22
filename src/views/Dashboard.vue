@@ -32,7 +32,7 @@
 
 <script>
 import * as blockstack from 'blockstack';
-import uuidv4 from 'uuid/v4';
+// import uuidv4 from 'uuid/v4';
 // import exif from 'exif-js';
 
 export default {
@@ -44,16 +44,6 @@ export default {
     };
   },
   mounted() {
-    console.log('cenas');
-
-    // const writeOptions = { encrypt: true };
-    // blockstack.putFile('photos.json', JSON.stringify([{ path: 'compressed_images/rMz2uqVwyas0N3uoENqrqc.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/rMz2uqVwyas0N3uoENqrqc.photo' }, { path: 'compressed_images/7cf12e0670sl8tj1ne3gps.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/7cf12e0670sl8tj1ne3gps.photo' }, { path: 'compressed_images/uv17ggz7i4e3rvz4vq1km3.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/uv17ggz7i4e3rvz4vq1km3.photo' }, { path: 'compressed_images/nf10wr6o9tmklzcoep83i.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/nf10wr6o9tmklzcoep83i.photo' }, { path: 'compressed_images/4f4vo9tjh9oxs5la33kf.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/4f4vo9tjh9oxs5la33kf.photo' }, { path: 'compressed_images/hcfv7keq63o1b553vdcj.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/hcfv7keq63o1b553vdcj.photo' }, { path: 'compressed_images/3.photo', url: 'https://gaia.blockstack.org/hub/1PVrDLhxnHKAi8aur3fRZ7C2qLSf2qwMUM/compressed_images/rMz2uqVwyas0N3uoENqrqc.photo' }]), writeOptions)
-    //   .then(() => {
-    //     console.log('done');
-    //   });
-
-    console.log(uuidv4());
-
     const readOptions = { decrypt: true };
     blockstack.getFile('photos.json', readOptions)
       .then((file) => {
