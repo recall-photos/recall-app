@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TopMenu v-if="isAuthenticated" />
+    <TopMenu v-if="user.authenticated" />
     <router-view/>
   </div>
 </template>
@@ -8,19 +8,18 @@
 <script>
 import * as blockstack from 'blockstack';
 import TopMenu from '@/components/TopMenu.vue';
-import { mapState } from 'vuex';
 
 export default {
   name: 'App',
+  data() {
+    return {
+      user: this.$store.state.UserStore,
+    };
+  },
   methods: {
     logout() {
       blockstack.signUserOut(window.location.origin);
     },
-  },
-  computed: {
-    ...mapState([
-      'isAuthenticated',
-    ]),
   },
   components: {
     TopMenu,

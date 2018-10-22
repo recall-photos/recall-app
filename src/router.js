@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import * as blockstack from 'blockstack';
-import store from './store';
+import store from './vuex';
 
 import Home from './views/Home.vue';
 import Dashboard from './views/Dashboard.vue';
@@ -10,13 +10,13 @@ Vue.use(Router);
 
 const resolveAuth = (to, from, next) => {
   if (blockstack.isUserSignedIn()) {
-    store.state.isAuthenticated = true;
+    store.state.UserStore.authenticated = true;
     next('/dashboard');
     return;
   } else if (blockstack.isSignInPending()) {
     blockstack.handlePendingSignIn()
       .then(() => {
-        store.state.isAuthenticated = true;
+        store.state.UserStore.authenticated = true;
         next('/dashboard');
       });
     return;
@@ -25,7 +25,7 @@ const resolveAuth = (to, from, next) => {
 };
 
 const ifAuthenticated = (to, from, next) => {
-  if (store.state.isAuthenticated) {
+  if (store.state.UserStore.authenticated) {
     next();
     return;
   }

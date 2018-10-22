@@ -31,26 +31,16 @@
 </template>
 
 <script>
-import * as blockstack from 'blockstack';
 // import uuidv4 from 'uuid/v4';
 // import exif from 'exif-js';
 
 export default {
   name: 'Dashboard',
   data() {
-    return {
-      username: blockstack.loadUserData().username,
-      photos: [],
-    };
+    return this.$store.state.UserStore;
   },
   mounted() {
-    const readOptions = { decrypt: true };
-    blockstack.getFile('photos.json', readOptions)
-      .then((file) => {
-        const statuses = JSON.parse(file || '[]');
-        this.photos = statuses;
-        console.log(statuses);
-      });
+    this.$store.dispatch('UserStore/index');
   },
 };
 </script>

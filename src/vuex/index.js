@@ -1,16 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import UserStore from './stores/user_store';
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    isAuthenticated: false,
-  },
-  mutations: {
-
-  },
-  actions: {
-
+  modules: {
+    UserStore,
   },
 });

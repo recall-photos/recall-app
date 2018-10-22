@@ -20,7 +20,7 @@ export default {
   name: 'TopMenu',
   methods: {
     upload() {
-      console.log('cenas');
+      console.log('Upload');
     },
     logout() {
       blockstack.signUserOut(window.location.origin);
