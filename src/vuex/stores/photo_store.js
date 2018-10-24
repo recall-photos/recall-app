@@ -77,7 +77,22 @@ const PhotoStore = {
       reader.readAsArrayBuffer(file);
     },
     remove(context, photo) {
-      context.commit('remove', photo);
+      const writeOptions = { encrypt: true };
+      const readOptions = { decrypt: true };
+      blockstack.getFile('photos.json', readOptions)
+        .then((photosFile) => {
+          const photos = JSON.parse(photosFile || '[]');
+          const index = photos.findIndex(element => element.uuid === photo.uuid);
+          photos.splice(index, 1);
+          const jsonString = JSON.stringify(photos);
+          blockstack.putFile('photos.json', jsonString, writeOptions)
+            .then(() => {
+              blockstack.putFile(photo.path, '', writeOptions)
+                .then(() => {
+                  context.commit('remove', photo);
+                });
+            });
+        });
     },
   },
 };

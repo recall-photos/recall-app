@@ -33,6 +33,7 @@ export default {
       blockstack.signUserOut(window.location.origin);
     },
     filesChange(name, files) {
+      console.log('changed file');
       this.$store.dispatch('PhotoStore/create', files[0]);
     },
   },
