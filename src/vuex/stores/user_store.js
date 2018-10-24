@@ -6,7 +6,6 @@ const UserStore = {
     loading: false,
     username: '',
     authenticated: false,
-    photos: [],
   },
   mutations: {
     loading(state, status) {
@@ -14,25 +13,15 @@ const UserStore = {
       tmpState.loading = status;
       return tmpState;
     },
-    many(state, data) {
+    set(state, username) {
       const tmpState = state;
-      tmpState.photos = data;
+      tmpState.username = username;
       return tmpState;
     },
   },
   actions: {
     index(context) {
-      context.commit('loading', true);
-      const readOptions = { decrypt: true };
-      blockstack.getFile('photos.json', readOptions)
-        .then((file) => {
-          const statuses = JSON.parse(file || '[]');
-          context.commit('many', statuses);
-          context.commit('loading', false);
-        })
-        .catch(() => {
-          context.commit('loading', false);
-        });
+      context.commit('set', blockstack.loadUserData().username);
     },
   },
 };
