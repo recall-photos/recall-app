@@ -15,9 +15,15 @@
           </div>
         </div>
         <div class="fl w-100 w-25-ns pa2 sidebar">
-          <div class="bg-white pv5">
-            <div class="profile tr">
-              {{ user.username }}
+          <div class="bg-white pv5 ml5">
+            <div class="profile tl pv4 bb b--light-silver">
+              <div class="dib w3">
+                <img class="br-100" :src="user.avatarUrl" alt="">
+              </div>
+              <div class="dib v-top mt2 ml3">
+                <div class="mb2"><b>{{ user.username }}</b></div>
+                <div class="mb2">{{ user.name }}</div>
+              </div>
             </div>
           </div>
         </div>

@@ -4,7 +4,9 @@ const UserStore = {
   namespaced: true,
   state: {
     loading: false,
+    name: '',
     username: '',
+    avatarUrl: '',
     authenticated: false,
   },
   mutations: {
@@ -13,15 +15,31 @@ const UserStore = {
       tmpState.loading = status;
       return tmpState;
     },
-    set(state, username) {
+    setUsername(state, username) {
       const tmpState = state;
       tmpState.username = username;
+      return tmpState;
+    },
+    setName(state, name) {
+      const tmpState = state;
+      tmpState.name = name;
+      return tmpState;
+    },
+    setAvatarUrl(state, avatarUrl) {
+      const tmpState = state;
+      tmpState.avatarUrl = avatarUrl;
       return tmpState;
     },
   },
   actions: {
     index(context) {
-      context.commit('set', blockstack.loadUserData().username);
+      context.commit('setUsername', blockstack.loadUserData().username);
+
+      const { profile } = blockstack.loadUserData();
+      const person = new blockstack.Person(profile);
+      context.commit('setName', person.name());
+      console.log(person.avatarUrl());
+      context.commit('setAvatarUrl', person.avatarUrl());
     },
   },
 };
