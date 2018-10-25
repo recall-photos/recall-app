@@ -50,11 +50,11 @@ const PhotoStore = {
         });
     },
     create(context, file) {
-      const writeOptions = { encrypt: true };
-      const readOptions = { decrypt: true };
-
       const photo = new Photo();
       photo.setFile(file);
+
+      const writeOptions = { encrypt: true };
+      const readOptions = { decrypt: true };
 
       const reader = new FileReader();
       reader.onload = () => {

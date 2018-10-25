@@ -5,10 +5,15 @@
         <div class="fl w-100 w-75-ns pa2">
           <div class="bg-white pv4 tl">
             <h1 class="f3 lh-copy">Wed, Oct 24, 2018</h1>
+            <PhotoModal
+              v-bind:photoUrl="selectedPhotoUrl"
+              v-if="showModal"
+              @close="showModal = false"
+            />
             <article class="cf">
               <div v-for="(photo, index) in photos.photos" :key="photo.path">
                 <div v-bind:class="{'fl w-50': true, 'w-25-ns': (index != 4)}">
-                  <Photo :instance="photo" />
+                  <Photo :instance="photo" @open="openPhotoModal" />
                 </div>
               </div>
             </article>
@@ -34,7 +39,7 @@
 
 <script>
 import Photo from '../components/Photo.vue';
-// import exif from 'exif-js';
+import PhotoModal from '../components/PhotoModal.vue';
 
 export default {
   name: 'Dashboard',
@@ -42,10 +47,19 @@ export default {
     return {
       user: this.$store.state.UserStore,
       photos: this.$store.state.PhotoStore,
+      selectedPhotoUrl: null,
+      showModal: false,
     };
   },
   components: {
     Photo,
+    PhotoModal,
+  },
+  methods: {
+    openPhotoModal(photo, photoUrl) {
+      this.selectedPhotoUrl = photoUrl;
+      this.showModal = true;
+    },
   },
   mounted() {
     this.$store.dispatch('UserStore/index');

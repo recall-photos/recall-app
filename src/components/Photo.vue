@@ -1,6 +1,8 @@
 <template>
   <div class="photo">
-    <a href="#" class="db aspect-ratio aspect-ratio--1x1 photo-link">
+    <a href="#"
+       @click="$emit('open', instance, localImageURL)"
+       class="db aspect-ratio aspect-ratio--1x1 photo-link">
       <img v-bind:src="localImageURL"
            style="position: absolute;left:0;top:0;width:100%;height: 100%;"
            alt="">
