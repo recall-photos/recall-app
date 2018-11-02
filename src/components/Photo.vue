@@ -1,7 +1,7 @@
 <template>
   <div class="photo">
     <a href="#"
-       @click="$emit('open', instance, localImageURL)"
+       @click="openModal"
        class="db aspect-ratio aspect-ratio--1x1 photo-link">
       <img v-bind:src="localImageURL"
            style="position: absolute;left:0;top:0;width:100%;height: 100%;"
@@ -28,8 +28,13 @@ export default {
     instance: photo,
   },
   methods: {
-    remove() {
+    remove(e) {
+      e.preventDefault();
       this.$store.dispatch('PhotoStore/remove', this.instance);
+    },
+    openModal(e) {
+      e.preventDefault();
+      this.$emit('open', this.instance, this.localImageURL);
     },
   },
   data() {
