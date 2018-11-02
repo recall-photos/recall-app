@@ -4,19 +4,21 @@
       <div class="cf ph2-ns">
         <div class="fl w-100 w-75-ns pa2">
           <div class="bg-white pv4 tl">
-            <h1 class="f3 lh-copy">Wed, Oct 24, 2018</h1>
             <PhotoModal
               v-bind:photoUrl="selectedPhotoUrl"
               v-if="showModal"
               @close="showModal = false"
             />
-            <article class="cf">
-              <div v-for="(photo, index) in photos.photos" :key="photo.path">
-                <div v-bind:class="{'fl w-50': true, 'w-25-ns': (index != 4)}">
-                  <Photo :instance="photo" @open="openPhotoModal" />
+            <div v-for="(date) in Object.keys(groupedPhotos).sort().reverse()" :key="date">
+              <div class="cf mb4">
+                <h1 class="f3 lh-copy">{{groupedPhotos[date].date.format("ddd, MMM DD YYYY")}}</h1>
+                <div v-for="(photo, index) in groupedPhotos[date].photos" :key="photo.path">
+                  <div v-bind:class="{'fl w-50': true, 'w-25-ns': (index != 4)}">
+                    <Photo :instance="photo" @open="openPhotoModal" />
+                  </div>
                 </div>
               </div>
-            </article>
+            </div>
           </div>
         </div>
         <div class="fl w-100 w-25-ns pa2 sidebar">
@@ -50,6 +52,20 @@ export default {
       selectedPhotoUrl: null,
       showModal: false,
     };
+  },
+  computed: {
+    groupedPhotos() {
+      const byday = {};
+      const photos = this.photos.photos || [];
+      photos.forEach((photo) => {
+        const d = photo.bestDate();
+        byday[d] = byday[d] || {};
+        byday[d].date = photo.bestMoment();
+        byday[d].photos = byday[d].photos || [];
+        byday[d].photos.push(photo);
+      });
+      return byday;
+    },
   },
   components: {
     Photo,

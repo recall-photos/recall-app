@@ -37,6 +37,7 @@ const PhotoStore = {
       blockstack.getFile('photos.json', readOptions)
         .then((file) => {
           const photos = JSON.parse(file || '[]');
+          photos.sort((a, b) => (b.takenAt || 0) - (a.takenAt || 0));
           const parsedPhotos = photos.map((p) => {
             const photo = new Photo();
             photo.fromObject(p);
@@ -66,7 +67,6 @@ const PhotoStore = {
                 const photos = JSON.parse(photosFile || '[]');
                 photos.unshift(photo);
                 const jsonString = JSON.stringify(photos);
-                console.log(jsonString);
                 blockstack.putFile('photos.json', jsonString, writeOptions)
                   .then(() => {
                     context.commit('prepend', photo);

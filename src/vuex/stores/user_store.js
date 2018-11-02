@@ -38,7 +38,6 @@ const UserStore = {
       const { profile } = blockstack.loadUserData();
       const person = new blockstack.Person(profile);
       context.commit('setName', person.name());
-      console.log(person.avatarUrl());
       context.commit('setAvatarUrl', person.avatarUrl());
     },
   },

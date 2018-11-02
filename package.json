@@ -13,6 +13,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "blockstack": "^18.0.4",
     "exif-js": "^2.3.0",
+    "moment": "^2.22.2",
     "uuid": "^3.3.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
