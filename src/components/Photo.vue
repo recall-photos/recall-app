@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import * as blockstack from 'blockstack';
+import { readFile } from 'blockstack-large-storage';
 import photo from '@/models/photo';
 
 export default {
@@ -43,7 +43,7 @@ export default {
     };
   },
   beforeMount() {
-    blockstack.getFile(this.instance.path)
+    readFile(this.instance.path)
       .then((data) => {
         const blob = new Blob([data], { type: 'image/jpeg' });
         const urlCreator = window.URL || window.webkitURL;

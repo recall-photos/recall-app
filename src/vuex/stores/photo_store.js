@@ -1,4 +1,4 @@
-import * as blockstack from 'blockstack';
+import { writeFile, readFile } from 'blockstack-large-storage';
 import Photo from '@/models/photo';
 
 const PhotoStore = {
@@ -34,7 +34,7 @@ const PhotoStore = {
     index(context) {
       context.commit('loading', true);
       const readOptions = { decrypt: true };
-      blockstack.getFile('photos.json', readOptions)
+      readFile('photos.json', readOptions)
         .then((file) => {
           const photos = JSON.parse(file || '[]');
           photos.sort((a, b) => (b.takenAt || 0) - (a.takenAt || 0));
@@ -60,14 +60,14 @@ const PhotoStore = {
       const reader = new FileReader();
       reader.onload = () => {
         const arrayBuffer = reader.result;
-        blockstack.getFile('photos.json', readOptions)
+        readFile('photos.json', readOptions)
           .then((photosFile) => {
-            blockstack.putFile(photo.path, arrayBuffer, writeOptions)
+            writeFile(photo.path, arrayBuffer, writeOptions)
               .then(() => {
                 const photos = JSON.parse(photosFile || '[]');
                 photos.unshift(photo);
                 const jsonString = JSON.stringify(photos);
-                blockstack.putFile('photos.json', jsonString, writeOptions)
+                writeFile('photos.json', jsonString, writeOptions)
                   .then(() => {
                     context.commit('prepend', photo);
                   });
@@ -79,15 +79,15 @@ const PhotoStore = {
     remove(context, photo) {
       const writeOptions = { encrypt: true };
       const readOptions = { decrypt: true };
-      blockstack.getFile('photos.json', readOptions)
+      readFile('photos.json', readOptions)
         .then((photosFile) => {
           const photos = JSON.parse(photosFile || '[]');
           const index = photos.findIndex(element => element.uuid === photo.uuid);
           photos.splice(index, 1);
           const jsonString = JSON.stringify(photos);
-          blockstack.putFile('photos.json', jsonString, writeOptions)
+          writeFile('photos.json', jsonString, writeOptions)
             .then(() => {
-              blockstack.putFile(photo.path, '', writeOptions)
+              writeFile(photo.path, '', writeOptions)
                 .then(() => {
                   context.commit('remove', photo);
                 });
