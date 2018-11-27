@@ -51,6 +51,7 @@ const PhotoStore = {
         });
     },
     create(context, file) {
+      context.commit('loading', true);
       const photo = new Photo();
       photo.setFile(file);
 
@@ -70,6 +71,7 @@ const PhotoStore = {
                 writeFile('photos.json', jsonString, writeOptions)
                   .then(() => {
                     context.commit('prepend', photo);
+                    context.commit('loading', false);
                   });
               });
           });
@@ -77,6 +79,7 @@ const PhotoStore = {
       reader.readAsArrayBuffer(file);
     },
     remove(context, photo) {
+      context.commit('loading', true);
       const writeOptions = { encrypt: true };
       const readOptions = { decrypt: true };
       readFile('photos.json', readOptions)
@@ -90,6 +93,7 @@ const PhotoStore = {
               writeFile(photo.path, '', writeOptions)
                 .then(() => {
                   context.commit('remove', photo);
+                  context.commit('loading', false);
                 });
             });
         });
