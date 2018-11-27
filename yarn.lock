@@ -2975,6 +2975,10 @@ exif-js@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/exif-js/-/exif-js-2.3.0.tgz#9d10819bf571f873813e7640241255ab9ce1a814"
 
+"exif-js@github:chrisborrowdale/exif-js":
+  version "2.2.1"
+  resolved "https://codeload.github.com/chrisborrowdale/exif-js/tar.gz/3a9149cf023ec18045389cd7e2b7c2fd815b1dba"
+
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -5085,6 +5089,12 @@ ora@^2.1.0:
     log-symbols "^2.2.0"
     strip-ansi "^4.0.0"
     wcwidth "^1.0.1"
+
+orientation-exif-blob@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/orientation-exif-blob/-/orientation-exif-blob-1.0.4.tgz#8da7357d358910938e11fbe798f115b3266f4950"
+  dependencies:
+    exif-js chrisborrowdale/exif-js
 
 original@>=0.0.5:
   version "1.0.2"

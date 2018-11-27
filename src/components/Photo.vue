@@ -23,6 +23,7 @@
 
 <script>
 import { readFile } from 'blockstack-large-storage';
+import resetImageOrientation from 'orientation-exif-blob';
 import photo from '@/models/photo';
 
 export default {
@@ -48,10 +49,10 @@ export default {
   beforeMount() {
     readFile(this.instance.path)
       .then((data) => {
-        const blob = new Blob([data], { type: 'image/jpeg' });
-        const urlCreator = window.URL || window.webkitURL;
-        const imageUrl = urlCreator.createObjectURL(blob);
-        this.localImageURL = imageUrl;
+        const file = new Blob([data], { type: 'image/jpeg' });
+        resetImageOrientation(file, (blob) => {
+          this.localImageURL = blob;
+        });
       });
   },
 };
