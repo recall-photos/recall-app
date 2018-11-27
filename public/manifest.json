@@ -1,6 +1,6 @@
 {
   "name": "Recall",
-  "start_url": "localhost:8080",
+  "start_url": "https://app.recall.photos",
   "description": "All your photos backed up.",
   "icons": [{
     "src": "https://helloblockstack.com/icon-192x192.png",
