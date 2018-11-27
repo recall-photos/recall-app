@@ -10,7 +10,10 @@
 
     <div class="photo-options ph2">
       <div class="tc">
-        <a href="#" @click="remove" class="dib white">
+        <a :href="this.localImageURL" class="icon dib white" download>
+          <font-awesome-icon icon="download" />
+        </a>
+        <a href="#" @click="remove" class="icon dib white">
           <font-awesome-icon icon="trash" />
         </a>
       </div>
@@ -68,7 +71,7 @@ export default {
   }
 
   .photo-options {
-    width: 40px;
+    width: 80px;
     height: 40px;
     background-color: rgb(70,121,231);
     line-height: 40px;
@@ -78,6 +81,11 @@ export default {
     right: 0px;
     z-index: 999;
     border-radius: 0 0 0 20px;
+  }
+
+  .photo-options .icon {
+    margin-left: 6px;
+    margin-right: 6px;
   }
 
   .photo:hover .photo-options {
