@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @drop="uploadFile" @dragover.prevent>
     <div class="mw9 center ph3-ns">
       <div class="cf ph2-ns">
         <div class="fl w-100 w-75-ns pa2">
@@ -75,6 +75,13 @@ export default {
     openPhotoModal(photo, photoUrl) {
       this.selectedPhotoUrl = photoUrl;
       this.showModal = true;
+    },
+    uploadFile(e) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      const { files } = e.dataTransfer;
+      this.$store.dispatch('PhotoStore/create', files[0]);
     },
   },
   mounted() {
