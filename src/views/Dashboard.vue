@@ -9,14 +9,26 @@
               v-if="showModal"
               @close="showModal = false"
             />
-            <div v-for="(date) in Object.keys(groupedPhotos).sort().reverse()" :key="date">
-              <div class="cf mb4">
-                <h1 class="f3 lh-copy">{{groupedPhotos[date].date.format("ddd, MMM DD YYYY")}}</h1>
-                <div v-for="(photo, index) in groupedPhotos[date].photos" :key="photo.path">
-                  <div v-bind:class="{'fl w-50': true, 'w-25-ns': (index != 4)}">
-                    <Photo :instance="photo" @open="openPhotoModal" />
+            <div v-if="Object.keys(groupedPhotos).length != 0">
+              <div v-for="(date) in Object.keys(groupedPhotos).sort().reverse()" :key="date">
+                <div class="cf mb4">
+                  <h1 class="f3 lh-copy">
+                    {{groupedPhotos[date].date.format("ddd, MMM DD YYYY")}}
+                  </h1>
+                  <div v-for="(photo, index) in groupedPhotos[date].photos" :key="photo.path">
+                    <div v-bind:class="{'fl w-50': true, 'w-25-ns': (index != 4)}">
+                      <Photo :instance="photo" @open="openPhotoModal" />
+                    </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div v-else class="tc mt5 mb7">
+              <div>
+                <img alt="Upload your photos" src="@/assets/photo-stack.svg" width="200">
+              </div>
+              <div>
+                <h1>Drop your photos here to upload</h1>
               </div>
             </div>
           </div>
@@ -24,8 +36,8 @@
         <div class="fl w-100 w-25-ns pa2 sidebar">
           <div class="bg-white pv5 ml5">
             <div class="profile tl pv4 bb b--light-silver">
-              <div class="dib w3">
-                <img class="br-100" :src="user.avatarUrl" alt="">
+              <div class="dib w3 h3">
+                <img class="br-100 bg-silver w-100 h-100 db" :src="user.avatarUrl" alt="">
               </div>
               <div class="dib v-top mt2 ml3">
                 <div class="mb2"><b>{{ user.username }}</b></div>
