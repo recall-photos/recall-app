@@ -4,7 +4,9 @@ import moment from 'moment';
 
 class Photo {
   setFile(file) {
+    this.name = file.name;
     this.path = `images/${file.name}`;
+    this.compressedPath = `compressed_images/${file.name}`;
     this.uuid = uuidv4();
     this.uploadedAt = Date.now();
     const photo = this;
@@ -14,14 +16,20 @@ class Photo {
         const momentDate = moment(takenAt, 'YYYY:MM:DD HH:mm:ss');
         photo.takenAt = momentDate.valueOf();
       }
+      if (exif.getTag(this, 'Orientation')) {
+        photo.orientation = exif.getTag(this, 'Orientation');
+      }
     });
   }
 
   fromObject(object) {
+    this.name = object.name;
     this.path = object.path;
+    this.compressedPath = object.compressedPath;
     this.uuid = object.uuid;
     this.uploadedAt = object.uploadedAt;
     this.takenAt = object.takenAt;
+    this.orientation = object.orientation;
   }
 
   bestMoment() {

@@ -1,4 +1,5 @@
 import { writeFile, readFile } from 'blockstack-large-storage';
+import imageCompression from 'browser-image-compression';
 import Photo from '@/models/photo';
 
 const PhotoStore = {
@@ -63,6 +64,13 @@ const PhotoStore = {
         const arrayBuffer = reader.result;
         readFile('photos.json', readOptions)
           .then((photosFile) => {
+            imageCompression(file, 0.1, 800)
+              .then((compressedFile) => {
+                writeFile(photo.compressedPath, compressedFile, writeOptions);
+              })
+              .catch((error) => {
+                console.log(error.message);
+              });
             writeFile(photo.path, arrayBuffer, writeOptions)
               .then(() => {
                 const photos = JSON.parse(photosFile || '[]');
