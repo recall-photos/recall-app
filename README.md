@@ -28,3 +28,7 @@ yarn run build
 ```
 yarn run lint
 ```
+
+## Roadmap
+
+We track new features and long-term development strategies on [this Trello board](https://trello.com/b/EMKJ0T7f).
