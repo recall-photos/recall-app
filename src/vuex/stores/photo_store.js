@@ -103,6 +103,7 @@ const PhotoStore = {
                   context.commit('remove', photo);
                   context.commit('loading', false);
                 });
+              writeFile(photo.compressedPath, '', writeOptions);
             });
         });
     },
