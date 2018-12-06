@@ -1,5 +1,9 @@
 <template>
   <div class="photo">
+    <Loading :active.sync="loading"
+             :can-cancel="false"
+             :is-full-page="false"></Loading>
+
     <a href="#"
        @click="openModal"
        class="db aspect-ratio aspect-ratio--1x1 photo-link">
@@ -24,6 +28,7 @@
 <script>
 import { readFile } from 'blockstack-large-storage';
 import resetImageOrientation from 'orientation-exif-blob';
+import Loading from 'vue-loading-overlay';
 import exif from 'exif-js';
 import photo from '@/models/photo';
 
@@ -31,6 +36,9 @@ export default {
   name: 'Photo',
   props: {
     instance: photo,
+  },
+  components: {
+    Loading,
   },
   methods: {
     remove(e) {
@@ -84,9 +92,11 @@ export default {
     return {
       fullLocalImageURL: null,
       compressedLocalImageURL: null,
+      loading: false,
     };
   },
   beforeMount() {
+    this.loading = true;
     readFile(this.instance.compressedPath || this.instance.path)
       .then((data) => {
         const file = new Blob([data], { type: 'image/jpeg' });
@@ -122,14 +132,16 @@ export default {
 
               ctx.drawImage(img, 0, 0);
               canvas.toBlob((blob) => {
+                this.loading = false;
                 this.compressedLocalImageURL = URL.createObjectURL(blob);
-              }, 'image/jpeg');
+              }, 'image/jpeg', 0.5);
             });
           };
 
           img.src = URL.createObjectURL(file);
         } else {
           resetImageOrientation(file, (blob) => {
+            this.loading = false;
             if (this.instance.compressedPath) {
               this.compressedLocalImageURL = blob;
             } else {
