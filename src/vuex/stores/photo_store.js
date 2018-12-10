@@ -51,40 +51,45 @@ const PhotoStore = {
           context.commit('loading', false);
         });
     },
-    create(context, file) {
+    create(context, files) {
       context.commit('loading', true);
-      const photo = new Photo();
-      photo.setFile(file);
 
       const writeOptions = { encrypt: true };
       const readOptions = { decrypt: true };
 
-      const reader = new FileReader();
-      reader.onload = () => {
-        const arrayBuffer = reader.result;
-        readFile('photos.json', readOptions)
-          .then((photosFile) => {
-            imageCompression(file, 0.1, 800)
-              .then((compressedFile) => {
-                writeFile(photo.compressedPath, compressedFile, writeOptions);
-              })
-              .catch((error) => {
-                console.log(error.message);
-              });
-            writeFile(photo.path, arrayBuffer, writeOptions)
-              .then(() => {
-                const photos = JSON.parse(photosFile || '[]');
-                photos.unshift(photo);
-                const jsonString = JSON.stringify(photos);
-                writeFile('photos.json', jsonString, writeOptions)
-                  .then(() => {
-                    context.commit('prepend', photo);
-                    context.commit('loading', false);
-                  });
-              });
+      readFile('photos.json', readOptions)
+        .then((photosFile) => {
+          const photos = JSON.parse(photosFile || '[]');
+
+          Array.from(files).forEach((file) => {
+            const photo = new Photo();
+            photo.setFile(file);
+
+            const reader = new FileReader();
+            reader.onload = () => {
+              const arrayBuffer = reader.result;
+
+              imageCompression(file, 0.1, 800)
+                .then((compressedFile) => {
+                  writeFile(photo.compressedPath, compressedFile, writeOptions);
+                })
+                .catch((error) => {
+                  console.log(error.message);
+                });
+              writeFile(photo.path, arrayBuffer, writeOptions)
+                .then(() => {
+                  photos.unshift(photo);
+                  const jsonString = JSON.stringify(photos);
+                  writeFile('photos.json', jsonString, writeOptions)
+                    .then(() => {
+                      context.commit('prepend', photo);
+                      context.commit('loading', false);
+                    });
+                });
+            };
+            reader.readAsArrayBuffer(file);
           });
-      };
-      reader.readAsArrayBuffer(file);
+        });
     },
     remove(context, photo) {
       context.commit('loading', true);

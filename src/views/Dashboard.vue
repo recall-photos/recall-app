@@ -93,7 +93,7 @@ export default {
       e.preventDefault();
 
       const { files } = e.dataTransfer;
-      this.$store.dispatch('PhotoStore/create', files[0]);
+      this.$store.dispatch('PhotoStore/create', files);
     },
   },
   mounted() {
