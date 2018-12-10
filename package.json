@@ -11,7 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
-    "blockstack": "^18.0.4",
+    "blockstack": "^18.1.0",
     "blockstack-large-storage": "^0.0.5",
     "browser-image-compression": "^0.0.3",
     "exif-js": "^2.3.0",

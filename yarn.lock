@@ -1416,31 +1416,6 @@ blockstack-large-storage@^0.0.5:
     blockstack "^18.1.0"
     to-array-buffer "^2.1.0"
 
-blockstack@^18.0.4:
-  version "18.0.4"
-  resolved "https://registry.yarnpkg.com/blockstack/-/blockstack-18.0.4.tgz#fb98c4269c72da3bcc0c1d0331c0d43ddad20e14"
-  dependencies:
-    ajv "^4.11.5"
-    bigi "^1.4.2"
-    bitcoinjs-lib "^4"
-    cheerio "^0.22.0"
-    cross-fetch "^2.2.2"
-    custom-protocol-detection-blockstack "1.1.4"
-    ecurve "^1.0.6"
-    elliptic "^6.4.0"
-    es6-promise "^4.2.4"
-    form-data "^2.3.2"
-    jsontokens "^0.7.8"
-    promise "^7.1.1"
-    query-string "^4.3.2"
-    request "^2.87.0"
-    ripemd160 "^2.0.1"
-    schema-inspector "^1.6.4"
-    sprintf-js "^1.0.3"
-    uuid "^3.2.1"
-    validator "^7.0.0"
-    zone-file "^0.2.2"
-
 blockstack@^18.1.0:
   version "18.1.0"
   resolved "https://registry.yarnpkg.com/blockstack/-/blockstack-18.1.0.tgz#9a47f3de062c1c9e9f91d7790cc63db2967a1a0e"
