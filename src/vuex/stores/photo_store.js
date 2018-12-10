@@ -64,6 +64,7 @@ const PhotoStore = {
           Array.from(files).forEach((file) => {
             const photo = new Photo();
             photo.setFile(file);
+            photos.unshift(photo);
 
             const reader = new FileReader();
             reader.onload = () => {
@@ -78,17 +79,15 @@ const PhotoStore = {
                 });
               writeFile(photo.path, arrayBuffer, writeOptions)
                 .then(() => {
-                  photos.unshift(photo);
-                  const jsonString = JSON.stringify(photos);
-                  writeFile('photos.json', jsonString, writeOptions)
-                    .then(() => {
-                      context.commit('prepend', photo);
-                      context.commit('loading', false);
-                    });
+                  context.commit('prepend', photo);
+                  context.commit('loading', false);
                 });
             };
             reader.readAsArrayBuffer(file);
           });
+
+          const jsonString = JSON.stringify(photos);
+          writeFile('photos.json', jsonString, writeOptions);
         });
     },
     remove(context, photo) {
