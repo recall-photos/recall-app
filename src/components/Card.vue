@@ -1,5 +1,5 @@
 <template>
-  <ul class="wrapper">
+  <div class="wrapper">
     <div class="container" v-for="item in cardItems" :key="item.id">
       <a class="card-link" :href="item.link" target="_blank" rel="noopener noreferrer">
         <article class="card">
@@ -12,7 +12,7 @@
         </article>
       </a>
     </div>
-  </ul>
+  </div>
 </template>
 
 <script>
@@ -107,16 +107,9 @@ $shadow: rgba(0, 0, 0, 0.2);
   padding: 1.125rem 0 0 0;
   border-top: 0.0625rem solid $border;
   font-weight: 400;
-}
-
-@media (max-width: 40rem) {
-  #container {
-    width: 18rem;
-    height: 27.25rem;
-  }
-
-  .card {
-    flex-wrap: wrap;
+  @media (max-width: 1024px) {
+    text-decoration: underline;
+    color: $purple;
   }
 }
 
@@ -141,10 +134,37 @@ $shadow: rgba(0, 0, 0, 0.2);
     grid-template-rows: 1fr;
   }
 
-  @media (max-width: 40rem) {
+  @media (max-width: 1079px) {
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 35px;
+      grid-auto-rows: 27rem;
+      align-items: center;
+      justify-self: center;
+    }
+
     .card {
       grid-template-columns: auto;
       grid-template-rows: 12rem 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .wrapper {
+      // max-width: 378px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 35px;
+      grid-auto-rows: 27rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      grid-template-columns: auto;
+      grid-template-rows: 12rem 1fr;
+      margin-top: 4rem;
     }
   }
 }

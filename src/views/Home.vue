@@ -1,11 +1,12 @@
 <template>
   <div class="home center" style="max-width: 1280px;">
     <div class="mt4 ph5 dib flex justify-between">
-        <img alt="Recall Logo" class="mw4" src="../assets/logo.svg">
-        <a href="https://recall.photos" target="_blank" rel="noopener noreferrer" class="pv2 link dim black">About</a>
+        <img alt="Recall Logo" class="mw4 center db dn-ns" src="../assets/logo.svg">
+        <img alt="Recall Logo" class="mw4 dn db-ns" src="../assets/logo.svg">
+        <a href="https://recall.photos" target="_blank" rel="noopener noreferrer" class="pv2 link dim black dn db-ns">About</a>
     </div>
-    <div class="mt6">
-      <h1 class="f2 ph7 lh-copy" style="font-weight: 400;">The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h1>
+    <div class="mt5 mt6-ns">
+      <h1 class="f4 f3-m f2-l ph4 ph6-ns lh-copy" style="font-weight: 400;">The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h1>
       <div class="mt5">
         <div v-if="authenticated">
           Logged in
@@ -19,7 +20,7 @@
         </div>
       </div>
       <div>
-        <div class="ph5 mt6">
+        <div class="ph4 ph5-ns mt5 mt6-ns">
           <card
             v-bind:cardItems="cardItems">
           </card>
@@ -27,7 +28,7 @@
       </div>
     </div>
     <div>
-      <div class="mt6 ph5 center">
+      <div class="mt5 mt6-ns mb4 ph5 center">
         <a class="link o-80 near-black hover-purple dib h2 w2 mr3" href="https://github.com/recall-photos/recall-app" target="_blank" rel="noopener noreferrer" title="GitHub">
           <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82.638-.178 1.323-.266 2.003-.27.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385C13.71 14.53 16 11.534 16 8c0-4.418-3.582-8-8-8"/></svg>
         </a>
@@ -63,7 +64,7 @@ export default {
           link: 'https://recall.photos',
           image: 'https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
           title: 'What is our mission?',
-          desc: 'Blockstack provides key tools and infrastructure to developers enabling decentralized storage and decentralized authentication & identity.',
+          desc: 'Recall wants to be an open-source alternative to Google Photos, where users retain the ownership and privacy of their photos forever.',
           action: 'Read more on our website',
         },
         {
@@ -71,7 +72,7 @@ export default {
           link: 'https://github.com/blockstack/gaia',
           image: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2553&q=80',
           title: 'How are your pictures stored?',
-          desc: 'Blockstack has developed Gaia, a decentralized high-performance storage system. In the future s3, dropbox and others will also be avaiable.',
+          desc: 'Blockstack has developed Gaia, a decentralized high-performance storage system. In the future s3 and Dropbox will also be avaiable.',
           action: 'Read the official documentation',
         },
         {
@@ -79,14 +80,14 @@ export default {
           link: 'https://www.youtube.com/watch?time_continue=181&v=7SmC7AuZNWY',
           image: 'https://images.unsplash.com/photo-1527455505333-9d3ac7adf523?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
           title: 'What is Blockstack?',
-          desc: 'Blockstack provides key tools and infrastructure to developers enabling decentralized storage and decentralized authentication & identity.',
+          desc: 'Blockstack provides key tools and infrastructure to developers that enable the usage of decentralized storage, authentication and identity.',
           action: 'Watch a video about Blockstack',
         },
         {
           id: 4,
           link: 'https://www.youtube.com/watch?v=WopvxEM7O84',
           image: 'https://images.unsplash.com/photo-1501622549218-2c3ef86627cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80',
-          title: '“How do I use Blockstack to sign in?”',
+          title: '“How do I use Blockstack?”',
           desc: 'First you need to download the Blockstack app at blockstack.org to access the decentralized internet and be able to use apps like Recall.',
           action: 'Watch a walkthrough of Blockstack',
         },
