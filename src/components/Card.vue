@@ -16,16 +16,16 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      cardItems: {
-        type: Array
-      }
-    }
-  }
+export default {
+  props: {
+    cardItems: {
+      type: Array,
+    },
+  },
+};
 </script>
 
-<style <style lang="scss">
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 
 $text: #777;
@@ -78,7 +78,7 @@ $shadow: rgba(0, 0, 0, 0.2);
   @include transition(opacity 0.3s ease);
   display: block;
   width: 100%;
-	object-fit: cover;
+  object-fit: cover;
 }
 
 .article-details {

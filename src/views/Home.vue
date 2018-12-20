@@ -1,19 +1,26 @@
 <template>
   <div class="home center" style="max-width: 1280px;">
     <div class="mt4 ph5 dib flex justify-between">
-        <img alt="Recall Logo" class="mw4 center db dn-ns" src="../assets/logo.svg">
-        <img alt="Recall Logo" class="mw4 dn db-ns" src="../assets/logo.svg">
-        <a href="https://recall.photos" target="_blank" rel="noopener noreferrer" class="pv2 link dim black dn db-ns">About</a>
+      <img alt="Recall Logo" class="mw4 center db dn-ns" src="../assets/logo.svg">
+      <img alt="Recall Logo" class="mw4 dn db-ns" src="../assets/logo.svg">
+      <a href="https://recall.photos"
+         target="_blank"
+         rel="noopener noreferrer" class="pv2 link dim black dn db-ns">
+       About
+      </a>
     </div>
     <div class="mt5 mt6-ns">
-      <h1 class="f4 f3-m f2-l ph4 ph6-ns lh-copy" style="font-weight: 400;">The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h1>
+      <h1 class="f4 f3-m f2-l ph4 ph6-ns lh-copy" style="font-weight: 400;">
+        The most secure, free, end-to-end encrypted and open-source alternative to Google Photos
+      </h1>
       <div class="mt5">
         <div v-if="authenticated">
           Logged in
         </div>
         <div v-else>
           <button @click="login"
-                  class="no-underline near-white bg-animate bg-purple hover-bg-white hover-black inline-flex items-center ma2 tc br2 pa2 pointer">
+                  class="no-underline near-white bg-animate bg-purple hover-bg-white
+                  hover-black inline-flex items-center ma2 tc br2 pa2 pointer">
             <img alt="Blockstack Logo" class="w2 ml1 fl" src="../assets/blockstack.svg">
             <span class="f6 ml3 pr2">Sign in with Blockstack</span>
           </button>
