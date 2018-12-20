@@ -78,6 +78,8 @@ const PhotoStore = {
 
                   processedFiles += 1;
                   if (processedFiles === numberOfFiles * 2) {
+                    const jsonString = JSON.stringify(photos);
+                    writeFile('photos.json', jsonString, writeOptions);
                     context.commit('loading', false);
                   }
                 })
@@ -90,15 +92,14 @@ const PhotoStore = {
 
                   processedFiles += 1;
                   if (processedFiles === numberOfFiles * 2) {
+                    const jsonString = JSON.stringify(photos);
+                    writeFile('photos.json', jsonString, writeOptions);
                     context.commit('loading', false);
                   }
                 });
             };
             reader.readAsArrayBuffer(file);
           });
-
-          const jsonString = JSON.stringify(photos);
-          writeFile('photos.json', jsonString, writeOptions);
         });
     },
     remove(context, photo) {
