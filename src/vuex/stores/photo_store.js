@@ -56,9 +56,11 @@ const PhotoStore = {
 
       const writeOptions = { encrypt: true };
       const readOptions = { decrypt: true };
+      const numberOfFiles = Array.from(files).length;
 
       readFile('photos.json', readOptions)
         .then((photosFile) => {
+          let processedFiles = 0;
           const photos = JSON.parse(photosFile || '[]');
 
           Array.from(files).forEach((file) => {
@@ -73,6 +75,11 @@ const PhotoStore = {
               imageCompression(file, 0.1, 800)
                 .then((compressedFile) => {
                   writeFile(photo.compressedPath, compressedFile, writeOptions);
+
+                  processedFiles += 1;
+                  if (processedFiles === numberOfFiles * 2) {
+                    context.commit('loading', false);
+                  }
                 })
                 .catch((error) => {
                   console.log(error.message);
@@ -80,7 +87,11 @@ const PhotoStore = {
               writeFile(photo.path, arrayBuffer, writeOptions)
                 .then(() => {
                   context.commit('prepend', photo);
-                  context.commit('loading', false);
+
+                  processedFiles += 1;
+                  if (processedFiles === numberOfFiles * 2) {
+                    context.commit('loading', false);
+                  }
                 });
             };
             reader.readAsArrayBuffer(file);
