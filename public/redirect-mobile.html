@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recall</title>
+  <script>
+    function getParameterByName(name) {
+      const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+      return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+    }
+    var authResponse = getParameterByName('authResponse');
+    window.location="recall://?authResponse=" + authResponse;
+  </script>
+</head>
+
+<body>
+</body>
+</html>
