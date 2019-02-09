@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import '@/assets/css/tailwind.css';
 import 'intersection-observer';
 import VueObserveVisibility from 'vue-observe-visibility';
 import App from './App.vue';
