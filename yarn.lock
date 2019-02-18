@@ -1438,41 +1438,12 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-blockstack-large-storage@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/blockstack-large-storage/-/blockstack-large-storage-0.0.5.tgz#a8e713ce460b6d4a8bdbee67181594a2a2beab53"
+blockstack-large-storage@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/blockstack-large-storage/-/blockstack-large-storage-0.0.6.tgz#a6c79f8303149f884c2cb3a51550b59445e482c6"
   dependencies:
-    blockstack "^18.1.0"
+    blockstack "^18.3.0"
     to-array-buffer "^2.1.0"
-
-blockstack@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.yarnpkg.com/blockstack/-/blockstack-18.1.0.tgz#9a47f3de062c1c9e9f91d7790cc63db2967a1a0e"
-  dependencies:
-    ajv "^4.11.5"
-    babel-runtime "^6.26.0"
-    bigi "^1.4.2"
-    bip32 "^1.0.2"
-    bip39 "^2.5.0"
-    bitcoinjs-lib "^4"
-    cheerio "^0.22.0"
-    cross-fetch "^2.2.2"
-    custom-protocol-detection-blockstack "1.1.4"
-    ecurve "^1.0.6"
-    elliptic "^6.4.0"
-    es6-promise "^4.2.4"
-    form-data "^2.3.2"
-    jsontokens "^0.7.8"
-    promise "^7.1.1"
-    query-string "^4.3.2"
-    request "^2.87.0"
-    ripemd160 "^2.0.1"
-    schema-inspector "^1.6.4"
-    sprintf-js "^1.0.3"
-    triplesec "^3.0.26"
-    uuid "^3.2.1"
-    validator "^7.0.0"
-    zone-file "^0.2.2"
 
 blockstack@^18.3.0:
   version "18.3.0"
@@ -2408,10 +2379,6 @@ currently-unhandled@^0.4.1:
   resolved "https://registry.yarnpkg.com/currently-unhandled/-/currently-unhandled-0.4.1.tgz#988df33feab191ef799a61369dd76c17adf957ea"
   dependencies:
     array-find-index "^1.0.1"
-
-custom-protocol-detection-blockstack@1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/custom-protocol-detection-blockstack/-/custom-protocol-detection-blockstack-1.1.4.tgz#44ae959f3f6f5280cb663ab9502ca4cf15df1091"
 
 cyclist@~0.2.2:
   version "0.2.2"
