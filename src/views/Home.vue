@@ -13,11 +13,11 @@
     <div class="mt-24">
       <div class="flex flex-row flex-wrap items-center content-center self-center justify-between">
         <div class="mt-12 w-1/2 flex flex-col items-start content-start self-start">
-          <h1 class="text-left text-black font-sans text-5xl font-normal">Recall
+          <h1 class="text-left text-black font-sans text-5xl font-bold">Recall
             <vue-typer
-              :text='["your memories","your family","your friends","your stories","special moments"]'
+              :text='["happy memories","family trips","your friends","loved ones", "your stories","special moments", "holidays abroad"]'
               :repeat="Infinity"
-              :shuffle="false"
+              :shuffle="true"
               initial-action="typing"
               :pre-type-delay="70"
               :type-delay="70"
@@ -29,7 +29,7 @@
             ></vue-typer>
           </h1>
           <h2
-            class="mt-12 text-left text-black font-sans text-3xl font-semi leading-tight"
+            class="mt-12 text-left text-black font-sans text-2xl font-semi leading-tight"
           >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
           <p class="mt-4 text-left text-black font-sans text-base font-normal leading-normal">
             Recall is your new personal photo vault. A completely free, encrypted and open-source solution to store and organize your photos with no restrictions while retaining full ownership and privacy.
