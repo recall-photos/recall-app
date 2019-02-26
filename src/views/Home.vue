@@ -29,7 +29,7 @@
     </div>
     <div class="mt-24">
       <div class="flex flex-row flex-wrap items-center content-center self-center justify-between">
-        <div class="mt-24 w-1/2 pr-8 flex flex-col items-start content-start self-start">
+        <div class="mt-24 w-1/2 pr-10 flex flex-col items-start content-start self-start">
           <h1 class="text-left text-black font-sans text-5xl font-bold">Recall
             <vue-typer
               :text='["happy memories","family trips","your friends","loved ones", "your stories","special moments", "holidays abroad"]'
@@ -49,8 +49,7 @@
             class="mt-12 text-left text-black font-sans text-2xl font-semi leading-tight"
           >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
           <p class="mt-4 text-left text-black font-sans text-base font-normal leading-normal">
-            Recall is your new personal photo vault. A completely free, encrypted and open-source solution to store and organize your photos with no restrictions while retaining full ownership and privacy.
-            We believe that photos are a true reflection of your life so you’ll want to keep them safe and private.
+            Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.
           </p>
           <div class="mt-12 float-left">
             <div v-if="authenticated">Logged in</div>
@@ -67,19 +66,19 @@
           </div>
         </div>
         <img
-          class="w-1/2 -mt-12"
+          class="w-1/2 -mt-6"
           alt="Recall illustration by "
           src="../assets/img/recall-opening.jpg"
         >
       </div>
     </div>
-    <div class="pt-24">
+    <div class="pt-32">
       <div class="flex">
         <h2
-          class="text-left text-black justify-start font-sans text-2xl font-semi leading-tight"
+          class="text-black font-sans text-2xl font-semi leading-tight"
         >Why you should use Recall?</h2>
       </div>
-      <div class="mt-24 justify-center">
+      <div class="mt-12">
         <Icon v-bind:iconItems="iconItems"></Icon>
       </div>
     </div>
@@ -158,43 +157,43 @@ export default {
       iconItems: [
         {
           icon_id: 1,
-          icon_svg: require("../assets/svg/private.svg"),
+          icon_svg: require("../assets/svg/features/private.svg"),
           icon_title: "Private and free",
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         },
         {
           icon_id: 2,
-          icon_svg: require("../assets/svg/private.svg"),
-          icon_title: "Private and free",
+          icon_svg: require("../assets/svg/features/simple.svg"),
+          icon_title: "Simple to use",
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         },
         {
           icon_id: 3,
-          icon_svg: require("../assets/svg/private.svg"),
-          icon_title: "Private and free",
+          icon_svg: require("../assets/svg/features/open-source.svg"),
+          icon_title: "Open source",
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         },
         {
           icon_id: 4,
-          icon_svg: require("../assets/svg/private.svg"),
-          icon_title: "Private and free",
+          icon_svg: require("../assets/svg/features/storage-lock.svg"),
+          icon_title: "No storage lock-in",
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         },
         {
           icon_id: 5,
-          icon_svg: require("../assets/svg/private.svg"),
-          icon_title: "Private and free",
+          icon_svg: require("../assets/svg/features/search.svg"),
+          icon_title: "Search your photos",
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         },
         {
           icon_id: 6,
-          icon_svg: require("../assets/svg/private.svg"),
-          icon_title: "Private and free",
+          icon_svg: require("../assets/svg/features/friends.svg"),
+          icon_title: "Share with friends",
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         }
