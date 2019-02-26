@@ -11,9 +11,7 @@
       </div>
     </div>
     <div class="mt-24">
-      <div
-        class="flex flex-column flex-wrap items-center content-center self-center justify-center"
-      >
+      <div class="flex flex-col flex-wrap items-center content-center self-center justify-center">
         <div class>
           <h1 class="text-center text-black font-sans text-5xl font-normal">Recall your memories</h1>
         </div>
@@ -46,27 +44,8 @@
             class="text-left text-black font-sans text-3xl font-semi leading-tight"
           >Why you should use Recall?</h2>
         </div>
-        <div class="mt-24 flex flex-column flex-wrap justify-center">
-          <div class="flex flex-row flex-wrap justify-around">
-            <div class="flex flex-row items-start max-w-xs text-left">
-              <img alt="svg icon" class="w-20" src="../assets/svg/private.svg">
-              <div class="ml-2 flex flex-column">
-                <h3 class="font-semibold learing-tight text-xl">Private and free</h3>
-                <p
-                  class="mt-4 font-regular leading-normal text-base opacity-75"
-                >No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry</p>
-              </div>
-            </div>
-            <div class="flex flex-row items-start max-w-xs text-left">
-              <img alt="svg icon" class="w-20" src="../assets/svg/private.svg">
-              <div class="ml-2 flex flex-column">
-                <h3 class="font-semibold learing-tight text-xl">Private and free</h3>
-                <p
-                  class="mt-4 font-regular leading-normal text-base opacity-75"
-                >No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry</p>
-              </div>
-            </div>
-          </div>
+        <div class="mt-24">
+          <icon v-bind:iconItems="iconItems"></icon>
         </div>
       </div>
       <div>
@@ -150,6 +129,7 @@
 
 <script>
 import Card from "@/components/Card.vue";
+import Icon from "@/components/Icon.vue";
 import * as blockstack from "blockstack";
 
 export default {
@@ -207,11 +187,28 @@ export default {
             "First you need to download the Blockstack app at blockstack.org to access the decentralized internet and be able to use apps like Recall.",
           action: "Watch a walkthrough of Blockstack"
         }
+      ],
+      iconItems: [
+        {
+          icon_id: 1,
+          icon_svg: require("../assets/svg/private.svg"),
+          icon_title: "Private and free",
+          icon_paragraph:
+            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+        },
+        {
+          icon_id: 2,
+          icon_svg: require("../assets/svg/private.svg"),
+          icon_title: "Private and free",
+          icon_paragraph:
+            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+        }
       ]
     };
   },
   components: {
-    Card
+    Card,
+    Icon
   }
 };
 </script>

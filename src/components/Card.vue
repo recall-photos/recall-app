@@ -3,12 +3,12 @@
     <div class="container" v-for="item in cardItems" :key="item.id">
       <a class="card-link" :href="item.link" target="_blank" rel="noopener noreferrer">
         <article class="card">
-            <img class="card-image" :src="item.image" />
-            <div class="article-details">
-                <h3 class="card-title">{{ item.title }}</h3>
-                <p class="card-description">{{ item.desc }}</p>
-                <p class="card-action">{{ item.action }}</p>
-            </div>
+          <img class="card-image" :src="item.image">
+          <div class="article-details">
+            <h3 class="card-title">{{ item.title }}</h3>
+            <p class="card-description">{{ item.desc }}</p>
+            <p class="card-action">{{ item.action }}</p>
+          </div>
         </article>
       </a>
     </div>
@@ -19,14 +19,14 @@
 export default {
   props: {
     cardItems: {
-      type: Array,
-    },
-  },
+      type: Array
+    }
+  }
 };
 </script>
 
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 
 $text: #777;
 $black: #111111;
@@ -40,11 +40,11 @@ $shadow: rgba(0, 0, 0, 0.2);
 }
 
 .container {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   text-rendering: optimizeLegibility;
   width: auto;
   height: auto;
-   &:hover .card-action {
+  &:hover .card-action {
     text-decoration: underline;
     color: $purple;
   }
@@ -114,7 +114,6 @@ $shadow: rgba(0, 0, 0, 0.2);
 }
 
 @supports (display: grid) {
-
   .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
