@@ -2,17 +2,34 @@
   <div class="container mx-auto lg: px-4">
     <div class="my-10 flex justify-between">
       <div class>
-        <img alt="Recall Logo" class="cursor-pointer" src="../assets/logo.svg">
+        <img alt="Recall Logo" class="w-2/3 cursor-pointer" src="../assets/svg/recall-symbol.svg">
       </div>
-      <div class="flex justify-between cursor-pointer font-mono">
-        <a href="https://recall.photos" target="_blank" rel="noopener noreferrer">Our mission</a>
-        <a href="https://recall.photos" target="_blank" rel="noopener noreferrer">How it works</a>
-        <a href="https://recall.photos" target="_blank" rel="noopener noreferrer">Who we are</a>
+      <div
+        class="inline-flex flex-row flex-no-wrap items-center self-center justify-around cursor-pointer text-sm font-mono"
+      >
+        <a
+          href="https://recall.photos"
+          class="mr-8 text-black no-underline hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >How it works</a>
+        <a
+          href="https://recall.photos"
+          class="mr-8 text-black no-underline hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Transparency</a>
+        <a
+          href="https://recall.photos"
+          class="btn font-bold"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Sign in</a>
       </div>
     </div>
     <div class="mt-24">
       <div class="flex flex-row flex-wrap items-center content-center self-center justify-between">
-        <div class="mt-12 w-1/2 flex flex-col items-start content-start self-start">
+        <div class="mt-24 w-1/2 pr-8 flex flex-col items-start content-start self-start">
           <h1 class="text-left text-black font-sans text-5xl font-bold">Recall
             <vue-typer
               :text='["happy memories","family trips","your friends","loved ones", "your stories","special moments", "holidays abroad"]'
@@ -49,7 +66,11 @@
             </div>
           </div>
         </div>
-        <img class="w-1/2" alt="Recall illustration by " src="../assets/img/recall-opening.jpg">
+        <img
+          class="w-1/2 -mt-12"
+          alt="Recall illustration by "
+          src="../assets/img/recall-opening.jpg"
+        >
       </div>
     </div>
     <div class="pt-24">
