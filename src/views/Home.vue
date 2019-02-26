@@ -13,7 +13,21 @@
     <div class="mt-24">
       <div class="flex flex-row flex-wrap items-center content-center self-center justify-between">
         <div class="mt-12 w-1/2 flex flex-col items-start content-start self-start">
-          <h1 class="text-left text-black font-sans text-5xl font-normal">Recall your memories</h1>
+          <h1 class="text-left text-black font-sans text-5xl font-normal">Recall
+            <vue-typer
+              :text='["your memories","your family","your friends","your stories","special moments"]'
+              :repeat="Infinity"
+              :shuffle="false"
+              initial-action="typing"
+              :pre-type-delay="70"
+              :type-delay="70"
+              :pre-erase-delay="2000"
+              :erase-delay="250"
+              erase-style="backspace"
+              :erase-on-complete="false"
+              caret-animation="smooth"
+            ></vue-typer>
+          </h1>
           <h2
             class="mt-12 text-left text-black font-sans text-3xl font-semi leading-tight"
           >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
@@ -53,7 +67,7 @@
         <Card v-bind:cardItems="cardItems"></Card>
       </div>
     </div>
-    <Footer />
+    <Footer/>
   </div>
 </template>
 
@@ -61,6 +75,7 @@
 import Footer from "@/components/Footer.vue";
 import Card from "@/components/Card.vue";
 import Icon from "@/components/Icon.vue";
+import { VueTyper } from "vue-typer";
 import * as blockstack from "blockstack";
 
 export default {
@@ -167,6 +182,7 @@ export default {
   },
   components: {
     Footer,
+    VueTyper,
     Card,
     Icon
   }
