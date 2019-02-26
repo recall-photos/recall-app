@@ -11,13 +11,11 @@
       </div>
     </div>
     <div class="mt-24">
-      <div class="flex flex-col flex-wrap items-center content-center self-center justify-center">
-        <div class>
-          <h1 class="text-center text-black font-sans text-5xl font-normal">Recall your memories</h1>
-        </div>
-        <div class="mt-24 max-w-md">
+      <div class="flex flex-row flex-wrap items-center content-center self-center justify-between">
+        <div class="mt-12 w-1/2 flex flex-col items-start content-start self-start">
+          <h1 class="text-left text-black font-sans text-5xl font-normal">Recall your memories</h1>
           <h2
-            class="text-left text-black font-sans text-3xl font-semi leading-tight"
+            class="mt-12 text-left text-black font-sans text-3xl font-semi leading-tight"
           >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
           <p class="mt-4 text-left text-black font-sans text-base font-normal leading-normal">
             Recall is your new personal photo vault. A completely free, encrypted and open-source solution to store and organize your photos with no restrictions while retaining full ownership and privacy.
@@ -37,21 +35,22 @@
             </div>
           </div>
         </div>
+        <img class="w-1/2" alt="Recall illustration by " src="../assets/img/recall-opening.jpg">
       </div>
-      <div class="pt-24">
-        <div class="flex justify-center">
-          <h2
-            class="text-left text-black font-sans text-3xl font-semi leading-tight"
-          >Why you should use Recall?</h2>
-        </div>
-        <div class="mt-24">
-          <icon v-bind:iconItems="iconItems"></icon>
-        </div>
+    </div>
+    <div class="pt-24">
+      <div class="flex">
+        <h2
+          class="text-left text-black justify-start font-sans text-2xl font-semi leading-tight"
+        >Why you should use Recall?</h2>
       </div>
-      <div>
-        <div class="ph4 ph5-ns mt5 mt6-ns">
-          <card v-bind:cardItems="cardItems"></card>
-        </div>
+      <div class="mt-24 justify-center">
+        <icon v-bind:iconItems="iconItems"></icon>
+      </div>
+    </div>
+    <div>
+      <div class="mt-32">
+        <card v-bind:cardItems="cardItems"></card>
       </div>
     </div>
     <div>
@@ -198,6 +197,34 @@ export default {
         },
         {
           icon_id: 2,
+          icon_svg: require("../assets/svg/private.svg"),
+          icon_title: "Private and free",
+          icon_paragraph:
+            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+        },
+        {
+          icon_id: 3,
+          icon_svg: require("../assets/svg/private.svg"),
+          icon_title: "Private and free",
+          icon_paragraph:
+            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+        },
+        {
+          icon_id: 4,
+          icon_svg: require("../assets/svg/private.svg"),
+          icon_title: "Private and free",
+          icon_paragraph:
+            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+        },
+        {
+          icon_id: 5,
+          icon_svg: require("../assets/svg/private.svg"),
+          icon_title: "Private and free",
+          icon_paragraph:
+            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+        },
+        {
+          icon_id: 6,
           icon_svg: require("../assets/svg/private.svg"),
           icon_title: "Private and free",
           icon_paragraph:

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-around">
+  <div class="flex flex-wrap justify-around">
     <div
       class="inline-flex items-start max-w-xs text-left mt-12"
       v-for="item in iconItems"
