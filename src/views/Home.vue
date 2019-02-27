@@ -18,7 +18,7 @@
           class="mr-8 text-black no-underline hover:underline"
           target="_blank"
           rel="noopener noreferrer"
-        >How it works</a>
+        >How to get started</a>
         <a
           href="https://recall.photos"
           class="mr-8 text-black no-underline hover:underline"
@@ -72,7 +72,9 @@
                 class="mt-4 btn-alt"
               >
                 <img alt="iOS App Store Logo" class="w-8 ml-1" src="../assets/svg/ios.svg">
-                <span class="font-mono font-bold text-sm ml-4 pr-2 text-grey-dark">Help us beta test our iOS app</span>
+                <span
+                  class="font-mono font-bold text-sm ml-4 pr-2 text-grey-dark"
+                >Help us beta test our iOS app</span>
               </button>
             </div>
           </div>
@@ -86,7 +88,7 @@
     </div>
     <div class="pt-32 mt-24">
       <div class="flex flex-col items-start">
-        <h2 class="text-black font-sans text-2xl font-semi leading-tight">Why you should use Recall?</h2>
+        <h2 class="text-black font-sans text-2xl font-semi leading-tight">Why you should use Recall</h2>
       </div>
       <div class="mt-12">
         <Icon v-bind:iconItems="iconItems"></Icon>
@@ -94,30 +96,15 @@
     </div>
     <div>
       <div class="mt-32">
-        <div class="flex flex-col items-start">
-          <h2 class="text-black font-sans text-2xl font-semi leading-tight">How it all works</h2>
-          <div class="mt-12 flex flex-row">
-            <div
-              class="max-w-sm w-full flex flex-row p-8 border-r border-b border-l border-grey-light border-t bg-white rounded"
-            >
-              <img
-                class="w-10 h-10 rounded-full mr-4"
-                src="https://upload.wikimedia.org/wikipedia/commons/5/58/1NumberOneInCircle.png"
-              >
-              <div class="flex flex-col justify-start items-start content-start text-left">
-                <h3 class="font-semibold learing-tight text-xl">Create an account with Blockstack</h3>
-                <p
-                  class="mt-2 font-regular leading-normal text-base opacity-75"
-                >When you start using Recall, first you will have to create your account, by generating a secret key and a password.</p>
-              </div>
-            </div>
-          </div>
+        <h2 class="float-left text-black font-sans text-2xl font-semi leading-tight">How to get started</h2>
+        <div class="flex flex-row justify-between">
+        <div class="w-1/2">
+          <img></img>
         </div>
-      </div>
-    </div>
-    <div>
-      <div class="mt-32">
-        <Card v-bind:cardItems="cardItems"></Card>
+        <div class="flex flex-col items-start w-1/2">
+          <SmallCard v-bind:SmallCardItems="SmallCardItems"></SmallCard>
+        </div>
+        </div>
       </div>
     </div>
     <Footer/>
@@ -126,7 +113,7 @@
 
 <script>
 import Footer from "@/components/Footer.vue";
-import Card from "@/components/Card.vue";
+import SmallCard from "@/components/SmallCard.vue";
 import Icon from "@/components/Icon.vue";
 import { VueTyper } from "vue-typer";
 import * as blockstack from "blockstack";
@@ -145,47 +132,28 @@ export default {
   data() {
     return {
       authenticated: this.$store.state.isAuthenticated,
-      cardItems: [
+      SmallCardItems: [
         {
-          id: 1,
-          link: "https://recall.photos",
-          image:
-            "https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
-          title: "What is our mission?",
-          desc:
-            "Recall wants to be an open-source alternative to Google Photos, where users retain the ownership and privacy of their photos forever.",
-          action: "Read more on our website"
+          card_id: 1,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Create an account with Blockstack",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
         },
         {
-          id: 2,
-          link: "https://github.com/blockstack/gaia",
-          image:
-            "https://images.unsplash.com/photo-1461360370896-922624d12aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2553&q=80",
-          title: "How are your pictures stored?",
-          desc:
-            "Blockstack has developed Gaia, a decentralized high-performance storage system. In the future s3 and Dropbox will also be avaiable.",
-          action: "Read the official documentation"
+          card_id: 2,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Authorise Recall to access your ID",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
         },
         {
-          id: 3,
-          link: "https://www.youtube.com/watch?time_continue=181&v=7SmC7AuZNWY",
-          image:
-            "https://images.unsplash.com/photo-1527455505333-9d3ac7adf523?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
-          title: "What is Blockstack?",
-          desc:
-            "Blockstack provides key tools and infrastructure to developers that enable the usage of decentralized storage, authentication and identity.",
-          action: "Watch a video about Blockstack"
+          card_id: 3,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Upload your images onto Recall",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
         },
-        {
-          id: 4,
-          link: "https://www.youtube.com/watch?v=WopvxEM7O84",
-          image:
-            "https://images.unsplash.com/photo-1501622549218-2c3ef86627cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2552&q=80",
-          title: "“How do I use Blockstack?”",
-          desc:
-            "First you need to download the Blockstack app at blockstack.org to access the decentralized internet and be able to use apps like Recall.",
-          action: "Watch a walkthrough of Blockstack"
-        }
       ],
       iconItems: [
         {
@@ -236,7 +204,7 @@ export default {
   components: {
     Footer,
     VueTyper,
-    Card,
+    SmallCard,
     Icon
   }
 };
