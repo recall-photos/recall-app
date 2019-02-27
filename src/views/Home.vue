@@ -54,9 +54,9 @@
           <h2
             class="mt-12 text-left text-black font-sans text-2xl font-semi leading-tight"
           >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
-          <p class="mt-4 text-left text-black font-sans text-base font-normal leading-normal opacity-75">
-            Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.
-          </p>
+          <p
+            class="mt-4 text-left text-black font-sans text-base font-normal leading-normal opacity-75"
+          >Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.</p>
           <div class="mt-12 float-left">
             <div v-if="authenticated">Logged in</div>
             <div v-else>
@@ -70,22 +70,49 @@
               </button>
             </div>
           </div>
+          <p
+            href="https://testflight.apple.com/join/YuXc2asc"
+            class="mt-24 font-mono font-normal text-sm no-underline hover:underline cursor-pointer"
+            target="_blank"
+            rel="noopener noreferrer"
+          >→ Help us beta test our iOS app</p>
         </div>
         <img
-          class="w-1/2 -mt-6"
+          class="w-1/2 -mt-6 rounded"
           alt="Recall illustration by "
           src="../assets/img/recall-opening.jpg"
         >
       </div>
     </div>
-    <div class="pt-32">
-      <div class="flex">
-        <h2
-          class="text-black font-sans text-2xl font-semi leading-tight"
-        >Why you should use Recall?</h2>
+    <div class="pt-32 mt-24">
+      <div class="flex flex-col items-start">
+        <h2 class="text-black font-sans text-2xl font-semi leading-tight">Why you should use Recall?</h2>
       </div>
       <div class="mt-12">
         <Icon v-bind:iconItems="iconItems"></Icon>
+      </div>
+    </div>
+    <div>
+      <div class="mt-32">
+        <div class="flex flex-col items-start">
+          <h2 class="text-black font-sans text-2xl font-semi leading-tight">How it all works</h2>
+          <div class="mt-12 flex flex-row">
+            <div
+              class="max-w-sm w-full flex flex-row p-8 border-r border-b border-l border-grey-light border-t bg-white rounded"
+            >
+              <img
+                class="w-10 h-10 rounded-full mr-4"
+                src="https://upload.wikimedia.org/wikipedia/commons/5/58/1NumberOneInCircle.png"
+              >
+              <div class="flex flex-col justify-start items-start content-start text-left">
+                <h3 class="font-semibold learing-tight text-xl">Create an account with Blockstack</h3>
+                <p
+                  class="mt-2 font-regular leading-normal text-base opacity-75"
+                >When you start using Recall, first you will have to create your account, by generating a secret key and a password.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div>

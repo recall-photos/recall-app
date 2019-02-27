@@ -11,7 +11,7 @@
           id="title-color"
           class="title-color font-semibold learing-tight text-xl"
         >{{ item.icon_title }}</h3>
-        <p class="mt-3 font-regular leading-normal text-base opacity-75">{{ item.icon_paragraph }}</p>
+        <p class="mt-2 font-regular leading-normal text-base opacity-75">{{ item.icon_paragraph }}</p>
       </div>
     </div>
   </div>
