@@ -29,7 +29,7 @@ export default {
 
 <style lang="scss">
 #title-color {
-  color: red;
+  color: black;
 }
 #svg-color {
   stroke: red;

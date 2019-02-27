@@ -12,13 +12,19 @@
           class="mr-8 text-black no-underline hover:underline"
           target="_blank"
           rel="noopener noreferrer"
+        >Features</a>
+        <a
+          href="https://recall.photos"
+          class="mr-8 text-black no-underline hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >How it works</a>
         <a
           href="https://recall.photos"
           class="mr-8 text-black no-underline hover:underline"
           target="_blank"
           rel="noopener noreferrer"
-        >Transparency</a>
+        >Share our mission</a>
         <a
           href="https://recall.photos"
           class="btn font-bold"
@@ -32,7 +38,7 @@
         <div class="mt-24 w-1/2 pr-10 flex flex-col items-start content-start self-start">
           <h1 class="text-left text-black font-sans text-5xl font-bold">Recall
             <vue-typer
-              :text='["happy memories","family trips","your friends","loved ones", "your stories","special moments", "holidays abroad"]'
+              :text='["happy memories","family trips","old friendships","loved ones", "your stories","special moments", "past adventures", "holidays abroad"]'
               :repeat="Infinity"
               :shuffle="true"
               initial-action="typing"
@@ -48,7 +54,7 @@
           <h2
             class="mt-12 text-left text-black font-sans text-2xl font-semi leading-tight"
           >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
-          <p class="mt-4 text-left text-black font-sans text-base font-normal leading-normal">
+          <p class="mt-4 text-left text-black font-sans text-base font-normal leading-normal opacity-75">
             Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.
           </p>
           <div class="mt-12 float-left">
@@ -60,7 +66,7 @@
                   class="w-8 ml-1 float-left"
                   src="../assets/blockstack.svg"
                 >
-                <span class="font-mono font-bold text-sm ml-4 pr-2">Sign in with Blockstack</span>
+                <span class="font-mono font-bold text-sm ml-4 pr-2">Start using it with Blockstack</span>
               </button>
             </div>
           </div>
