@@ -57,28 +57,28 @@
           <p
             class="mt-4 text-left text-black font-sans text-base font-normal leading-normal opacity-75"
           >Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.</p>
-          <div class="mt-12 float-left">
+          <div class="mt-12">
             <div v-if="authenticated">Logged in</div>
-            <div v-else>
+            <div v-else class="flex flex-col items-start content-start self-stretch">
               <button @click="login" class="btn">
-                <img
-                  alt="Blockstack Logo"
-                  class="w-8 ml-1 float-left"
-                  src="../assets/blockstack.svg"
-                >
+                <img alt="Blockstack Logo" class="w-8 ml-1" src="../assets/svg/blockstack.svg">
                 <span class="font-mono font-bold text-sm ml-4 pr-2">Start using it with Blockstack</span>
+              </button>
+              <button
+                @click="window.open(
+                  'https://testflight.apple.com/join/YuXc2asc',
+                  '_blank'
+                );"
+                class="mt-4 btn-alt"
+              >
+                <img alt="iOS App Store Logo" class="w-8 ml-1" src="../assets/svg/ios.svg">
+                <span class="font-mono font-bold text-sm ml-4 pr-2 text-grey-dark">Help us beta test our iOS app</span>
               </button>
             </div>
           </div>
-          <p
-            href="https://testflight.apple.com/join/YuXc2asc"
-            class="mt-24 font-mono font-normal text-sm no-underline hover:underline cursor-pointer"
-            target="_blank"
-            rel="noopener noreferrer"
-          >→ Help us beta test our iOS app</p>
         </div>
         <img
-          class="w-1/2 -mt-6 rounded"
+          class="w-1/2 rounded"
           alt="Recall illustration by "
           src="../assets/img/recall-opening.jpg"
         >
