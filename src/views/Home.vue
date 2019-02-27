@@ -71,7 +71,7 @@
                 );"
                 class="mt-4 btn-alt"
               >
-                <img alt="iOS App Store Logo" class="w-8 ml-1" src="../assets/svg/ios.svg">
+                <img alt="iOS App Store Logo" class="w-8 ml-1" src="../assets/svg/apple.svg">
                 <span
                   class="font-mono font-bold text-sm ml-4 pr-2 text-grey-dark"
                 >Help us beta test our iOS app</span>
@@ -94,16 +94,22 @@
         <Icon v-bind:iconItems="iconItems"></Icon>
       </div>
     </div>
-    <div>
-      <div class="mt-32">
-        <h2 class="float-left text-black font-sans text-2xl font-semi leading-tight">How to get started</h2>
-        <div class="flex flex-row justify-between">
-        <div class="w-1/2">
-          <img></img>
-        </div>
+    <div class="mt-32">
+      <h2
+        class="float-left text-black font-sans text-2xl font-semi leading-tight"
+      >How to get started</h2>
+      <div class="flex flex-row justify-between">
+        <div class="w-1/2"></div>
         <div class="flex flex-col items-start w-1/2">
           <SmallCard v-bind:SmallCardItems="SmallCardItems"></SmallCard>
         </div>
+      </div>
+    </div>
+    <div class="pt-32 mt-24">
+      <div class="flex flex-col items-start">
+        <h2 class="text-black font-sans text-2xl font-semi leading-tight">Help us share our mission</h2>
+        <div class="flex flex-row justify-around items-center">
+          <TwitterCard v-bind:TwitterCardItems="TwitterCardItems"></TwitterCard>
         </div>
       </div>
     </div>
@@ -114,6 +120,7 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import SmallCard from "@/components/SmallCard.vue";
+import TwitterCard from "@/components/TwitterCard.vue";
 import Icon from "@/components/Icon.vue";
 import { VueTyper } from "vue-typer";
 import * as blockstack from "blockstack";
@@ -132,29 +139,6 @@ export default {
   data() {
     return {
       authenticated: this.$store.state.isAuthenticated,
-      SmallCardItems: [
-        {
-          card_id: 1,
-          card_svg: require("../assets/svg/features/private.svg"),
-          card_title: "Create an account with Blockstack",
-          card_paragraph:
-            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
-        },
-        {
-          card_id: 2,
-          card_svg: require("../assets/svg/features/private.svg"),
-          card_title: "Authorise Recall to access your ID",
-          card_paragraph:
-            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
-        },
-        {
-          card_id: 3,
-          card_svg: require("../assets/svg/features/private.svg"),
-          card_title: "Upload your images onto Recall",
-          card_paragraph:
-            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
-        },
-      ],
       iconItems: [
         {
           icon_id: 1,
@@ -198,6 +182,59 @@ export default {
           icon_paragraph:
             "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
         }
+      ],
+      SmallCardItems: [
+        {
+          card_id: 1,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Create an account with Blockstack",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        },
+        {
+          card_id: 2,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Authorise Recall to access your ID",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        },
+        {
+          card_id: 3,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Upload your images onto Recall",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        }
+      ],
+      TwitterCardItems: [
+        {
+          card_id: 1,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Create an account with Blockstack",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        },
+        {
+          card_id: 2,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Authorise Recall to access your ID",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        },
+        {
+          card_id: 3,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Upload your images onto Recall",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        },
+        {
+          card_id: 4,
+          card_svg: require("../assets/svg/features/private.svg"),
+          card_title: "Upload your images onto Recall",
+          card_paragraph:
+            "When you start using Recall, first you will have to create your account, by generating a secret key and a password."
+        }
       ]
     };
   },
@@ -205,6 +242,7 @@ export default {
     Footer,
     VueTyper,
     SmallCard,
+    TwitterCard,
     Icon
   }
 };
