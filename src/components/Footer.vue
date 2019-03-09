@@ -1,68 +1,36 @@
 <template>
-  <div class="mt-32 pt-24 pb-16 bg-purple-darkest p-8">
-    <div class="sm:flex mb-4">
+  <div class="mt-32 pt-24 pb-16 bg-white p-8 border-purple-light border-t-2">
+    <div class="container mx-auto text-left opacity-75 text-sm lg:px-4">
+      <div class="flex justify-center items-start content-start sm:flex mb-4">
       <div class="sm:w-1/4 h-auto">
-        <div class="text-orange mb-2">Orange</div>
-        <ul class="list-reset leading-normal">
-          <li class="hover:text-orange text-grey-darker">One</li>
-          <li class="hover:text-orange text-grey-darker">Two</li>
-          <li class="hover:text-orange text-grey-darker">Three</li>
-          <li class="hover:text-orange text-grey-darker">Four</li>
-          <li class="hover:text-orange text-grey-darker">Five</li>
-          <li class="hover:text-orange text-grey-darker">Six</li>
-          <li class="hover:text-orange text-grey-darker">Seven</li>
-          <li class="hover:text-orange text-grey-darker">Eight</li>
+        <div class="font-mono font-bold text-grey-darkest mb-4">Recall</div>
+        <ul class="list-reset leading-normal cursor-pointer">
+          <li class="hover:text-purple-dark text-grey-darker mb-2">Sign In</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">Features</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">How to get started</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">Share our mission</li>
+        </ul>
+            <p class="mt-10 text-left text-grey text-sm opacity-75 hidden md:block">© Recall Photos</p>
+      </div>
+      <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
+        <div class="font-mono font-bold text-grey-darkest mb-4">Blockstack</div>
+        <ul class="list-reset leading-normal cursor-pointer">
+          <li class="hover:text-purple-dark text-grey-darker mb-2">What is Blockstack?</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">Storage (Gaia)</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">App Mining</li>
         </ul>
       </div>
       <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-        <div class="text-blue mb-2">Blue</div>
-        <ul class="list-reset leading-normal">
-          <li class="hover:text-blue text-grey-darker">One</li>
-          <li class="hover:text-blue text-grey-darker">Two</li>
-          <li class="hover:text-blue text-grey-darker">Three</li>
-        </ul>
-
-        <div class="text-blue-light mb-2 mt-4">Blue-light</div>
-        <ul class="list-reset leading-normal">
-          <li class="hover:text-blue-light text-grey-darker">One</l>i
-          <li class="hover:text-blue-light text-grey-darker">Two</li>
-          <li class="hover:text-blue-light text-grey-darker">Three</li>
+        <div class="font-mono font-bold text-grey-darkest mb-4">Support</div>
+        <ul class="list-reset leading-normal cursor-pointer">
+          <li class="hover:text-purple-dark text-grey-darker mb-2">FAQ</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">Support</li>
+          <li class="hover:text-purple-dark text-grey-darker mb-2">Roadmap</li>
         </ul>
       </div>
-      <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-        <div class="text-green-dark mb-2">Green-dark</div>
-        <ul class="list-reset leading-normal">
-          <li class="hover:text-green-dark text-grey-darker">One</li>
-          <li class="hover:text-green-dark text-grey-darker">Two</li>
-          <li class="hover:text-green-dark text-grey-darker">Three</li>
-        </ul>
-
-        <div class="text-green-light mb-2 mt-4">Green-light</div>
-        <ul class="list-reset leading-normal">
-          <li class="hover:text-green-light text-grey-darker">One</li>
-          <li class="hover:text-green-light text-grey-darker">Two</li>
-          <li class="hover:text-green-light text-grey-darker">Three</li>
-        </ul>
-      </div>
-      <div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
-        <div class="text-red-light mb-2">Newsletter</div>
-        <p
-          class="text-grey-darker leading-normal"
-        >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur.</p>
+      <div>
         <div class="mt-4 flex">
-          <input
-            type="text"
-            class="p-2 border border-grey-light round text-grey-dark text-sm h-auto"
-            placeholder="Your email address"
-          >
-          <button class="bg-orange text-white rounded-sm h-auto text-xs p-3">Subscribe</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- <div class="mt5 mt6-ns mb4 ph5 center">
-      <a
+          <a
         class="link o-80 near-black hover-purple dib h2 w2 mr3"
         href="https://github.com/recall-photos/recall-app"
         target="_blank"
@@ -84,6 +52,28 @@
         </svg>
       </a>
       <a
+        class="link o-80 near-black hover-purple dib w2 mr3"
+        href="https://twitter.com/recallphotos"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Twitter"
+      >
+        <svg
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="1.414"
+        >
+          <path
+            d="M16 3.038c-.59.26-1.22.437-1.885.517.677-.407 1.198-1.05 1.443-1.816-.634.375-1.337.648-2.085.795-.598-.638-1.45-1.036-2.396-1.036-1.812 0-3.282 1.468-3.282 3.28 0 .258.03.51.085.75C5.152 5.39 2.733 4.084 1.114 2.1.83 2.583.67 3.147.67 3.75c0 1.14.58 2.143 1.46 2.732-.538-.017-1.045-.165-1.487-.41v.04c0 1.59 1.13 2.918 2.633 3.22-.276.074-.566.114-.865.114-.21 0-.416-.02-.617-.058.418 1.304 1.63 2.253 3.067 2.28-1.124.88-2.54 1.404-4.077 1.404-.265 0-.526-.015-.783-.045 1.453.93 3.178 1.474 5.032 1.474 6.038 0 9.34-5 9.34-9.338 0-.143-.004-.284-.01-.425.64-.463 1.198-1.04 1.638-1.7z"
+            fill-rule="nonzero"
+          ></path>
+        </svg>
+      </a>
+            <a
         class="link o-80 near-black hover-purple dib w2 mr3"
         href="https://twitter.com/recallphotos"
         target="_blank"
@@ -128,5 +118,9 @@
           ></path>
         </svg>
       </a>
-  </div>-->
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 </template>

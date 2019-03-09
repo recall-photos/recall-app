@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container mx-auto lg: px-4">
+    <div class="container mx-auto lg:px-4">
       <div class="my-10 flex justify-between">
         <div class>
           <img alt="Recall Logo" class="w-2/3 cursor-pointer" src="../assets/svg/recall-symbol.svg">
