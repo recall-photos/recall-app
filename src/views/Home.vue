@@ -202,21 +202,21 @@ export default {
       SmallCardItems: [
         {
           card_id: 1,
-          card_img: require("../assets/img/6.jpg"),
+          card_img: require("../assets/img/1.png"),
           card_title: "Create an account with Blockstack",
           card_paragraph:
             "To start using Recall, first you have to create an account with Blockstack. You are routed automatically from our app. This will generate a secret key and a password."
         },
         {
           card_id: 2,
-          card_img: require("../assets/img/7.jpg"),
+          card_img: require("../assets/img/2.png"),
           card_title: "Authorise Recall to access your ID",
           card_paragraph:
             "To start using Recall, first you have to create an account with Blockstack. You are routed automatically from our app. This will generate a secret key and a password."
         },
         {
           card_id: 3,
-          card_img: require("../assets/img/8.jpg"),
+          card_img: require("../assets/img/3.png"),
           card_title: "Upload your images onto Recall",
           card_paragraph:
             "To start using Recall, first you have to create an account with Blockstack. You are routed automatically from our app. This will generate a secret key and a password."
