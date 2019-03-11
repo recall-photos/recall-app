@@ -162,45 +162,57 @@ export default {
       iconItems: [
         {
           icon_id: 1,
+          icon_opacity: "opacity: 1;",
+          icon_color: "color: #382b5f",
           icon_svg: require("../assets/svg/features/private.svg"),
           icon_title: "Private and free",
           icon_paragraph:
-            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+            "No one but you has access to your photos. Choose where to store your photos or use the free space Blockstack provides."
         },
         {
           icon_id: 2,
+          icon_opacity: "opacity: 1",
+          icon_color: "color: #DE751F",
           icon_svg: require("../assets/svg/features/simple.svg"),
           icon_title: "Simple to use",
           icon_paragraph:
-            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+            "It’s extremely simple to use our apps, both on desktop and mobile. Login via Blockstack auth and start uploading your photos."
         },
         {
           icon_id: 3,
+          icon_opacity: "opacity: 1",
+          icon_color: "color: #794ACF",
           icon_svg: require("../assets/svg/features/open-source.svg"),
           icon_title: "Open source",
           icon_paragraph:
-            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+            "All our code is open sourced on Github. You can review how we treat your photos and contribute to future features."
         },
         {
           icon_id: 4,
+          icon_opacity: "opacity: 1",
+          icon_color: "color: #621B18",
           icon_svg: require("../assets/svg/features/storage-lock.svg"),
           icon_title: "No storage lock-in",
           icon_paragraph:
-            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+            "Change your storage provider at any time. You will never lose your photos even if Recall stops working tomorrow."
         },
         {
           icon_id: 5,
+          icon_opacity: "opacity: 0.5",
+          icon_color: "color: grey;",
           icon_svg: require("../assets/svg/features/search.svg"),
           icon_title: "Search your photos",
           icon_paragraph:
-            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+            "You will be able to search your photos by location, time and other data. Wherever you are, Recall is available."
         },
         {
           icon_id: 6,
+          icon_opacity: "opacity: 0.5",
+          icon_color: "color: grey;",
           icon_svg: require("../assets/svg/features/friends.svg"),
           icon_title: "Share with friends",
           icon_paragraph:
-            "No single point of failure, enjoy a combination of the best offerings out there and get notified of major changes and new technologies in the industry."
+            "Soon you will be able to share your photos with others, without losing any of the privacy benefits offered by Recall."
         }
       ],
       SmallCardItems: [
