@@ -22,12 +22,6 @@
           >How to get started</a>
           <a
             href="https://recall.photos"
-            class="mr-8 text-black no-underline hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Share our mission</a>
-          <a
-            href="https://recall.photos"
             class="btn font-bold"
             target="_blank"
             rel="noopener noreferrer"
@@ -39,9 +33,11 @@
           class="flex flex-row flex-wrap items-center content-center self-center justify-between"
         >
           <div class="mt-24 w-1/2 pr-10 flex flex-col items-start content-start self-start">
+            <!-- eslint-disable vue/no-v-html-->
+            <!-- :text='["happy memories","family trips","old friendships", "your friends", "loved ones", "your stories","special moments", "past adventures", "holidays abroad"]' -->
             <h1 class="text-left text-black font-sans text-5xl font-bold">Recall
               <vue-typer
-                :text='["happy memories","family trips","old friendships","loved ones", "your stories","special moments", "past adventures", "holidays abroad"]'
+                text="testing"
                 :repeat="Infinity"
                 :shuffle="true"
                 initial-action="typing"
@@ -52,8 +48,9 @@
                 erase-style="backspace"
                 :erase-on-complete="false"
                 caret-animation="smooth"
-              ></vue-typer>
+              />
             </h1>
+            <!-- eslint-enable -->
             <h2
               class="mt-12 text-left text-black font-sans text-2xl font-semi leading-tight"
             >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
@@ -118,16 +115,6 @@
           </div>
         </div>
       </div>
-      <div class="mt-32 pt-24">
-        <div class="flex flex-col items-start">
-          <h2
-            class="text-black font-sans text-4xl font-semi leading-tight"
-          >Help us share our mission</h2>
-          <div class="flex flex-row justify-around items-center">
-            <TwitterCard v-bind:TwitterCardItems="TwitterCardItems"></TwitterCard>
-          </div>
-        </div>
-      </div>
     </div>
     <Footer/>
   </div>
@@ -136,7 +123,6 @@
 <script>
 import Footer from "@/components/Footer.vue";
 import SmallCard from "@/components/SmallCard.vue";
-import TwitterCard from "@/components/TwitterCard.vue";
 import Icon from "@/components/Icon.vue";
 import { VueTyper } from "vue-typer";
 import * as blockstack from "blockstack";
@@ -205,21 +191,23 @@ export default {
           card_img: require("../assets/img/1.png"),
           card_title: "Create an account with Blockstack",
           card_paragraph:
-            "To start using Recall, first you have to create an account with Blockstack. You are routed automatically from our app. This will generate a secret key and a password."
+            "To start using Recall, first you need to create an account with Blockstack. This is your personal identity on the new web. Learn more about it " +
+            <a href="https://blockstack.org/">here</a> +
+            "."
         },
         {
           card_id: 2,
           card_img: require("../assets/img/2.png"),
           card_title: "Authorise Recall to access your ID",
           card_paragraph:
-            "To start using Recall, first you have to create an account with Blockstack. You are routed automatically from our app. This will generate a secret key and a password."
+            "After you have your ID, you will need to authorize Recall to write on your hub. Think of your hub as your personal and secure space that only you have access to."
         },
         {
           card_id: 3,
           card_img: require("../assets/img/3.png"),
-          card_title: "Upload your images onto Recall",
+          card_title: "Upload your images to Recall",
           card_paragraph:
-            "To start using Recall, first you have to create an account with Blockstack. You are routed automatically from our app. This will generate a secret key and a password."
+            "All set! Upload your photos and they will be stored on the provider of your choice (by default Blockstack provides their own hub but you can change this later)."
         }
       ],
       TwitterCardItems: [
@@ -258,7 +246,6 @@ export default {
     Footer,
     VueTyper,
     SmallCard,
-    TwitterCard,
     Icon
   }
 };
