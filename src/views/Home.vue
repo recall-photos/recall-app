@@ -10,14 +10,14 @@
         >
           <a
             href="#features"
-            class="mr-8 text-black no-underline hover:underline"
+            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark"
             target="_blank"
             rel="noopener noreferrer"
             v-smooth-scroll
           >Features</a>
           <a
             href="#get-started"
-            class="mr-8 text-black no-underline hover:underline"
+            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark"
             target="_blank"
             rel="noopener noreferrer"
             v-smooth-scroll
@@ -107,13 +107,23 @@
         >
           <div class="w-1/2">
             <img
-              class="w-4/5 mt-32 rounded"
+              class="w-3/4 mt-32 -ml-12 rounded"
               alt="Recall illustration by "
               src="../assets/img/recall-how.jpg"
             >
           </div>
           <div class="flex flex-col items-center w-1/2">
             <SmallCard v-bind:SmallCardItems="SmallCardItems"></SmallCard>
+            <a
+              @click="$modal.show('quickstart-video')"
+              class="mt-10 text-sm text-black no-underline hover:underline hover:text-purple-dark opacity-75 cursor-pointer"
+              rel="noopener noreferrer"
+            >Watch how quick the process is from start to finish</a>
+            <modal name="quickstart-video" :width="auto" :height="600">
+              <div slot="top-right">
+                <button @click="$modal.hide('quickstart-video')">❌</button>
+              </div>Hello, ☀️!
+            </modal>
           </div>
         </div>
       </div>
@@ -138,6 +148,12 @@ export default {
         "store_write",
         "publish_data"
       ]);
+    },
+    show() {
+      this.$modal.show("quickstart-video");
+    },
+    hide() {
+      this.$modal.hide("quickstart-video");
     }
   },
   data() {
