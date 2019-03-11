@@ -9,19 +9,21 @@
           class="inline-flex flex-row flex-no-wrap items-center self-center justify-around cursor-pointer text-sm font-mono"
         >
           <a
-            href="https://recall.photos"
+            href="#features"
             class="mr-8 text-black no-underline hover:underline"
             target="_blank"
             rel="noopener noreferrer"
+            v-smooth-scroll
           >Features</a>
           <a
-            href="https://recall.photos"
+            href="#get-started"
             class="mr-8 text-black no-underline hover:underline"
             target="_blank"
             rel="noopener noreferrer"
+            v-smooth-scroll
           >How to get started</a>
           <a
-            href="https://recall.photos"
+            href="https://app.recall.photos"
             class="btn font-bold"
             target="_blank"
             rel="noopener noreferrer"
@@ -86,7 +88,7 @@
           >
         </div>
       </div>
-      <div class="pt-32 mt-24">
+      <div id="features" class="pt-32 mt-24">
         <div class="flex flex-col items-start">
           <h2
             class="text-black font-sans text-4xl font-semi leading-tight"
@@ -96,7 +98,7 @@
           <Icon v-bind:iconItems="iconItems"></Icon>
         </div>
       </div>
-      <div class="mt-32 pt-24">
+      <div id="get-started" class="mt-32 pt-24">
         <h2
           class="text-left text-black font-sans text-4xl font-semi leading-tight"
         >How to get started</h2>

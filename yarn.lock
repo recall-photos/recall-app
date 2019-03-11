@@ -2390,18 +2390,13 @@ copy-webpack-plugin@^4.5.2:
     p-limit "^1.0.0"
     serialize-javascript "^1.4.0"
 
-core-js@^2.4.0:
+core-js@^2.4.0, core-js@^2.5.0:
   version "2.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
 core-js@^2.5.3:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
-
-core-js@^2.5.0:
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
-  integrity sha512-klh/kDpwX8hryYL14M9w/xei6vrv6sE8gTHDG7/T/+SEovB/G4ejwcfE/CBzO6Edsu+OETZMZ3wcX/EjUkrl5A==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -7056,14 +7051,9 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
-psl@^1.1.24:
+psl@^1.1.24, psl@^1.1.28:
   version "1.1.31"
   resolved "https://registry.yarnpkg.com/psl/-/psl-1.1.31.tgz#e9aa86d0101b5b105cbe93ac6b784cd547276184"
-
-psl@^1.1.28:
-  version "1.1.31"
-  resolved "https://registry.yarnpkg.com/psl/-/psl-1.1.31.tgz#e9aa86d0101b5b105cbe93ac6b784cd547276184"
-  integrity sha512-/6pt4+C+T+wZUieKR620OpzN/LlnNKuWjy1iFLQ/UG35JqHlR/89MP1d96dUfkf6Dne3TuLQzOYEYshJ+Hx8mw==
 
 public-encrypt@^4.0.0:
   version "4.0.3"
@@ -8723,6 +8713,11 @@ vue-typer@^1.2.0:
   integrity sha512-o0n2F9yOnbdQak1OiPFbZonIzysL5jiS1OPgaEX0KnMlKqXRKi808QHRdoMuqw44oYQM/vtxCt3AaNb9OzKH1Q==
   dependencies:
     lodash.split "^4.4.2"
+
+vue2-smooth-scroll@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vue2-smooth-scroll/-/vue2-smooth-scroll-1.0.5.tgz#6e6f35094720ba781985560f45105c96ba4caccd"
+  integrity sha512-3HP9ak4DW6p8w8qjylBv+aZzTc3t7IU5sfb2wsA7QoIMBc5QCuMS4KOwx+DNEtBfDCSnIoxVqSb+Sx1qJSYhfQ==
 
 vue@^2.5.17:
   version "2.5.17"

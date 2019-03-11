@@ -27,6 +27,7 @@
     "vue-observe-visibility": "^0.4.3",
     "vue-router": "^3.0.1",
     "vue-typer": "^1.2.0",
+    "vue2-smooth-scroll": "^1.0.5",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
