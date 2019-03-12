@@ -182,7 +182,7 @@ export default {
         {
           icon_id: 1,
           icon_opacity: "opacity: 1;",
-          icon_color: "color: #5661B3",
+          icon_color: "color: #111111",
           icon_svg: require("../assets/svg/features/private.svg"),
           icon_title: "Private and free",
           icon_paragraph:
@@ -191,7 +191,7 @@ export default {
         {
           icon_id: 2,
           icon_opacity: "opacity: 1",
-          icon_color: "color: #DE751F",
+          icon_color: "color: #111111",
           icon_svg: require("../assets/svg/features/simple.svg"),
           icon_title: "Simple to use",
           icon_paragraph:
@@ -200,7 +200,7 @@ export default {
         {
           icon_id: 3,
           icon_opacity: "opacity: 1",
-          icon_color: "color: #794ACF",
+          icon_color: "color: #111111",
           icon_svg: require("../assets/svg/features/open-source.svg"),
           icon_title: "Open source",
           icon_paragraph:
@@ -209,7 +209,7 @@ export default {
         {
           icon_id: 4,
           icon_opacity: "opacity: 1",
-          icon_color: "color: #CC1F1A",
+          icon_color: "color: #111111",
           icon_svg: require("../assets/svg/features/storage-lock.svg"),
           icon_title: "No storage lock-in",
           icon_paragraph:
