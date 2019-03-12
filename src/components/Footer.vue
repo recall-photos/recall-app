@@ -5,33 +5,84 @@
         <div class="sm:w-1/4 h-auto">
           <div class="font-mono font-bold text-grey-darkest mb-4">Recall</div>
           <ul class="list-reset leading-normal cursor-pointer">
-            <li class="hover:text-purple-dark text-grey-darker mb-2">Sign In</li>
-            <li class="hover:text-purple-dark text-grey-darker mb-2">Features</li>
-            <li class="hover:text-purple-dark text-grey-darker mb-2">How to get started</li>
+            <li class="mb-2">
+              <a class="link hover:text-purple-dark text-grey-darker" href="#start">Sign In</a>
+            </li>
+            <li class="mb-2">
+              <a class="link hover:text-purple-dark text-grey-darker" href="#features">Features</a>
+            </li>
+            <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="#get-started"
+              >How to get started</a>
+            </li>
           </ul>
           <p class="mt-10 text-left text-grey text-sm opacity-75 hidden md:block">© Recall Photos</p>
         </div>
         <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
           <div class="font-mono font-bold text-grey-darkest mb-4">Blockstack</div>
           <ul class="list-reset leading-normal cursor-pointer">
-            <li class="hover:text-purple-dark text-grey-darker mb-2">What is Blockstack?</li>
-            <li class="hover:text-purple-dark text-grey-darker mb-2">Storage (Gaia)</li>
-            <li class="hover:text-purple-dark text-grey-darker mb-2">App Mining</li>
+            <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="https://youtu.be/7SmC7AuZNWY"
+                target="_blank"
+                rel="noopener noreferrer"
+              >What is Blockstack?</a>
+            </li>
+            <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="https://github.com/blockstack/gaia"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Storage (Gaia)</a>
+            </li>
+            <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="https://app.co/mining/apps"
+                target="_blank"
+                rel="noopener noreferrer"
+              >App Mining</a>
+            </li>
           </ul>
         </div>
         <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
           <div class="font-mono font-bold text-grey-darkest mb-4">Support</div>
           <ul class="list-reset leading-normal cursor-pointer">
-            <li class="hover:text-purple-dark text-grey-darker mb-2">FAQ</li>
-            <li class="hover:text-purple-dark text-grey-darker mb-2">Support</li>
-            <li class="hover:text-purple-dark text-grey-darker mb-2">Roadmap</li>
+            <!-- <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="mailto:support@recall.photos"
+                target="_blank"
+                rel="noopener noreferrer"
+              >FAQ</a>
+            </li>-->
+            <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="mailto:support@recall.photos"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Contact</a>
+            </li>
+            <li class="mb-2">
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="https://trello.com/b/EMKJ0T7f/recall-roadmap"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Roadmap</a>
+            </li>
           </ul>
         </div>
         <div>
           <div class="mt-4 flex">
             <a
               class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
-              href="https://github.com/recall-photos/recall-app"
+              href="https://github.com/recall-photos"
               target="_blank"
               rel="noopener noreferrer"
               title="GitHub"

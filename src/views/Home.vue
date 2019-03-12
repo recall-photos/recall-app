@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="start">
     <div class="container mx-auto lg:px-4">
       <div class="my-10 flex justify-between">
         <div class>
@@ -22,12 +22,7 @@
             rel="noopener noreferrer"
             v-smooth-scroll
           >How to get started</a>
-          <a
-            href="https://app.recall.photos"
-            class="btn font-bold"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Sign in</a>
+          <a class="btn font-bold" @click="login">Sign in</a>
         </div>
       </div>
       <div class="mt-24">
@@ -142,7 +137,7 @@
         </div>
       </div>
     </div>
-    <Footer/>
+    <Footer loginParent="login"/>
   </div>
 </template>
 
