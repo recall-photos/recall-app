@@ -163,7 +163,7 @@ export default {
         {
           icon_id: 1,
           icon_opacity: "opacity: 1;",
-          icon_color: "color: #382b5f",
+          icon_color: "color: #5661B3",
           icon_svg: require("../assets/svg/features/private.svg"),
           icon_title: "Private and free",
           icon_paragraph:
@@ -190,7 +190,7 @@ export default {
         {
           icon_id: 4,
           icon_opacity: "opacity: 1",
-          icon_color: "color: #621B18",
+          icon_color: "color: #CC1F1A",
           icon_svg: require("../assets/svg/features/storage-lock.svg"),
           icon_title: "No storage lock-in",
           icon_paragraph:
