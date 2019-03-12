@@ -116,13 +116,27 @@
             <SmallCard v-bind:SmallCardItems="SmallCardItems"></SmallCard>
             <a
               @click="$modal.show('quickstart-video')"
-              class="mt-10 text-sm text-black no-underline hover:underline hover:text-purple-dark opacity-75 cursor-pointer"
+              class="mt-10 text-sm text-black no-underline hover:underline hover:text-purple-dark opacity-75 cursor-pointer hidden lg:block"
               rel="noopener noreferrer"
-            >Watch how quick the process is from start to finish</a>
-            <modal name="quickstart-video" :width="auto" :height="600">
-              <div slot="top-right">
-                <button @click="$modal.hide('quickstart-video')">❌</button>
-              </div>Hello, ☀️!
+            >Watch how easy the process is from start to finish</a>
+            <modal name="quickstart-video" :adaptive="true" minWidth="800" minHeight="525">
+              <div class="flex flex-col justify-center content-center items-center self-center">
+                <plyr>
+                  <video
+                    src="../assets/video/recall-demo.mp4"
+                    id="player"
+                    controls
+                    loop="true"
+                    autoplay="true"
+                    quality="large"
+                    style="max-width: 800px"
+                  />
+                </plyr>
+                <button
+                  @click="$modal.hide('quickstart-video')"
+                  class="btn mt-4 font-bold"
+                >Back to page</button>
+              </div>
             </modal>
           </div>
         </div>
@@ -137,6 +151,8 @@ import Footer from "@/components/Footer.vue";
 import SmallCard from "@/components/SmallCard.vue";
 import Icon from "@/components/Icon.vue";
 import { VueTyper } from "vue-typer";
+import { PlyrVideo } from "vue-plyr";
+import "vue-plyr/dist/vue-plyr.css";
 import * as blockstack from "blockstack";
 
 export default {
@@ -159,6 +175,9 @@ export default {
   data() {
     return {
       authenticated: this.$store.state.isAuthenticated,
+      // videos: [
+      //   { src: require("../assets/video/recall-demo.mp4"), format: "mp4" }
+      // ],
       iconItems: [
         {
           icon_id: 1,
@@ -275,6 +294,7 @@ export default {
   components: {
     Footer,
     VueTyper,
+    PlyrVideo,
     SmallCard,
     Icon
   }
