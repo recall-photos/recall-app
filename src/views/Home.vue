@@ -173,7 +173,7 @@
         </div>
       </div>
     </div>
-    <Footer loginParent="login"/>
+    <Footer/>
   </div>
 </template>
 
@@ -191,7 +191,7 @@ export default {
   methods: {
     login() {
       const { origin } = window.location;
-      blockstack.redirectToSignIn(origin, `${origin}/site.webmanifest`, [
+      blockstack.redirectToSignIn(origin, `${origin}/manifest.json`, [
         "store_write",
         "publish_data"
       ]);
