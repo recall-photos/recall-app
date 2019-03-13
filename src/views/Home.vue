@@ -1,6 +1,6 @@
 <template>
   <div id="start">
-    <div class="container mx-auto lg:px-4">
+    <div class="container mx-auto px-8 lg:px-4">
       <div class="my-10 flex justify-between">
         <div class>
           <img alt="Recall Logo" class="w-2/3 cursor-pointer" src="../assets/svg/recall-symbol.svg">
@@ -10,29 +10,33 @@
         >
           <a
             href="#features"
-            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark"
+            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark hidden lg:block"
             target="_blank"
             rel="noopener noreferrer"
             v-smooth-scroll
           >Features</a>
           <a
             href="#get-started"
-            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark"
+            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark hidden lg:block"
             target="_blank"
             rel="noopener noreferrer"
             v-smooth-scroll
           >How to get started</a>
-          <a class="btn font-bold" @click="login">Sign in</a>
+          <a class="btn font-bold hidden lg:block" @click="login">Sign in</a>
         </div>
       </div>
-      <div class="mt-24">
+      <div class="mt-8 md:mt-24">
         <div
-          class="flex flex-row flex-wrap items-center content-center self-center justify-between"
+          class="flex flex-col items-center content-center self-center justify-between md:flex-row"
         >
-          <div class="mt-24 w-1/2 pr-10 flex flex-col items-start content-start self-start">
+          <div
+            class="pr-10 flex flex-col items-start content-start self-start md:mt-24 md:w-1/2 xl:mt-32 xl:pt-12"
+          >
             <!-- eslint-disable vue/no-v-html-->
             <!-- :text='["happy memories","family trips","old friendships", "your friends", "loved ones", "your stories","special moments", "past adventures", "holidays abroad"]' -->
-            <h1 class="text-left text-black font-sans text-5xl font-bold">Recall
+            <h1
+              class="text-left text-black font-sans font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+            >Recall
               <vue-typer
                 text="testing"
                 :repeat="Infinity"
@@ -49,65 +53,75 @@
             </h1>
             <!-- eslint-enable -->
             <h2
-              class="mt-12 text-left text-black font-sans text-2xl font-semi leading-tight"
+              class="text-left text-black font-sans font-semi leading-tight mt-8 text-base lg:mt-12 lg:text-2xl"
             >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
             <p
-              class="mt-4 text-left text-black font-sans text-base font-normal leading-normal opacity-75"
+              class="mt-4 text-left text-black font-sans font-normal leading-normal opacity-75 text-sm md:text-base"
             >Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.</p>
-            <div class="mt-12">
+            <div class="mt-6 lg:mt-12">
               <div v-if="authenticated">Logged in</div>
               <div v-else class="flex flex-col items-start content-start self-stretch">
                 <button @click="login" class="btn">
-                  <img alt="Blockstack Logo" class="w-8 ml-1" src="../assets/svg/blockstack.svg">
-                  <span class="font-mono font-bold text-sm ml-4 pr-2">Start using it with Blockstack</span>
+                  <img
+                    alt="Blockstack Logo"
+                    class="ml-1 w-5 hidden md:block lg:w-8"
+                    src="../assets/svg/blockstack.svg"
+                  >
+                  <span
+                    class="font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs pr-3 md:ml-4 md:pr-5 lg:text-sm"
+                  >Start using it with Blockstack</span>
                 </button>
                 <button
                   @click="window.open(
                   'https://testflight.apple.com/join/YuXc2asc',
                   '_blank'
                 );"
-                  class="mt-4 btn-alt"
+                  class="mt-4 btn-alt pr-8"
                 >
-                  <img alt="iOS App Store Logo" class="w-8 ml-1" src="../assets/svg/apple.svg">
+                  <img
+                    alt="iOS App Store Logo"
+                    class="ml-1 w-5 hidden md:block lg:w-8"
+                    src="../assets/svg/apple.svg"
+                  >
                   <span
-                    class="font-mono font-bold text-sm ml-4 pr-2 text-grey-dark"
+                    class="text-grey-dark font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs md:ml-4 md:pr-2 lg:text-sm"
                   >Help us beta test our iOS app</span>
                 </button>
               </div>
             </div>
           </div>
           <img
-            class="w-1/2 rounded"
+            class="rounded md:w-1/2 mt-12 md:mt-24"
             alt="Recall illustration by "
             src="../assets/img/recall-opening.jpg"
           >
         </div>
       </div>
-      <div id="features" class="pt-32 mt-24">
+      <div id="features" class="mt-24 md:pt-32">
         <div class="flex flex-col items-start">
           <h2
-            class="text-black font-sans text-4xl font-semi leading-tight"
+            class="text-middle md:text-left text-black font-sans font-semi leading-tight text-2xl md:text-3xl lg:text-4xl"
           >Why you should use Recall</h2>
         </div>
         <div class="mt-16">
           <Icon v-bind:iconItems="iconItems"></Icon>
         </div>
       </div>
-      <div id="get-started" class="mt-32 pt-24">
+      <div id="get-started" class="mt-24 md:pt-32">
         <h2
-          class="text-left text-black font-sans text-4xl font-semi leading-tight"
+          class="text-middle md:text-left text-black font-sans font-semi leading-tight text-2xl md:text-3xl lg:text-4xl"
         >How to get started</h2>
         <div
-          class="flex flex-row flex-wrap items-center content-center self-center justify-between"
+          class="flex flex-col items-center content-center self-center justify-between md:flex-row"
         >
-          <div class="w-1/2">
+          <div class="md:w-1/2">
             <img
-              class="w-3/4 mt-32 -ml-12 rounded"
+              class="w-3/4 mt-24 md:mt-32 md:-ml-12"
               alt="Recall illustration by "
               src="../assets/img/recall-how.jpg"
             >
           </div>
-          <div class="flex flex-col items-center w-1/2">
+          <div class="flex flex-col items-center md:w-1/2">
             <SmallCard v-bind:SmallCardItems="SmallCardItems"></SmallCard>
             <a
               @click="$modal.show('quickstart-video')"

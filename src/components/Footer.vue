@@ -1,7 +1,7 @@
 <template>
   <div class="mt-32 pt-24 pb-16 bg-white p-8 border-purple-light border-t-2">
     <div class="container mx-auto text-left opacity-75 text-sm lg:px-4">
-      <div class="flex justify-center items-start content-start sm:flex mb-4">
+      <div class="flex flex-col justify-center items-start content-start md:flex-row mb-4">
         <div class="sm:w-1/4 h-auto">
           <div class="font-mono font-bold text-grey-darkest mb-4">Recall</div>
           <ul class="list-reset leading-normal cursor-pointer">
@@ -79,7 +79,7 @@
           </ul>
         </div>
         <div>
-          <div class="mt-4 flex">
+          <div class="mt-12 md:mt-4 flex">
             <a
               class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
               href="https://github.com/recall-photos"
