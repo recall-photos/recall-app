@@ -2,28 +2,36 @@
   <div id="start">
     <div class="container mx-auto px-8 lg:px-4">
       <div class="my-10 flex justify-between">
-        <div class>
-          <img alt="Recall Logo" class="w-2/3 cursor-pointer" src="../assets/svg/recall-symbol.svg">
-        </div>
-        <div
-          class="inline-flex flex-row flex-no-wrap items-center self-center justify-around cursor-pointer text-sm font-mono"
-        >
-          <a
-            href="#features"
-            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark hidden lg:block"
-            target="_blank"
-            rel="noopener noreferrer"
-            v-smooth-scroll
-          >Features</a>
-          <a
-            href="#get-started"
-            class="mr-8 text-black no-underline hover:underline hover:text-purple-dark hidden lg:block"
-            target="_blank"
-            rel="noopener noreferrer"
-            v-smooth-scroll
-          >How to get started</a>
-          <a class="btn font-bold hidden lg:block" @click="login">Sign in</a>
-        </div>
+        <transition appear name="fade">
+          <div class>
+            <img
+              alt="Recall Logo"
+              class="w-2/3 cursor-pointer"
+              src="../assets/svg/recall-symbol.svg"
+            >
+          </div>
+        </transition>
+        <transition appear name="fade">
+          <div
+            class="inline-flex flex-row flex-no-wrap items-center self-center justify-around cursor-pointer text-sm font-mono"
+          >
+            <a
+              href="#features"
+              class="mr-8 text-black no-underline hover:underline hover:text-purple-dark hidden lg:block"
+              target="_blank"
+              rel="noopener noreferrer"
+              v-smooth-scroll
+            >Features</a>
+            <a
+              href="#get-started"
+              class="mr-8 text-black no-underline hover:underline hover:text-purple-dark hidden lg:block"
+              target="_blank"
+              rel="noopener noreferrer"
+              v-smooth-scroll
+            >How to get started</a>
+            <a class="btn font-bold hidden lg:block" @click="login">Sign in</a>
+          </div>
+        </transition>
       </div>
       <div class="mt-8 md:mt-24">
         <div
@@ -58,43 +66,47 @@
             <p
               class="mt-4 text-left text-black font-sans font-normal leading-normal opacity-75 text-sm md:text-base"
             >Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.</p>
-            <div class="mt-6 lg:mt-12">
-              <div v-if="authenticated">Logged in</div>
-              <div v-else class="flex flex-col items-start content-start self-stretch">
-                <button @click="login" class="btn">
-                  <img
-                    alt="Blockstack Logo"
-                    class="ml-1 w-5 hidden md:block lg:w-8"
-                    src="../assets/svg/blockstack.svg"
-                  >
-                  <span
-                    class="font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs pr-3 md:ml-4 md:pr-5 lg:text-sm"
-                  >Start using it with Blockstack</span>
-                </button>
-                <button
-                  @click="window.open(
+            <transition appear name="fadeLeft">
+              <div class="mt-6 lg:mt-12">
+                <div v-if="authenticated">Logged in</div>
+                <div v-else class="flex flex-col items-start content-start self-stretch">
+                  <button @click="login" class="btn">
+                    <img
+                      alt="Blockstack Logo"
+                      class="ml-1 w-5 hidden md:block lg:w-8"
+                      src="../assets/svg/blockstack.svg"
+                    >
+                    <span
+                      class="font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs pr-3 md:ml-4 md:pr-5 lg:text-sm"
+                    >Start using it with Blockstack</span>
+                  </button>
+                  <button
+                    @click="window.open(
                   'https://testflight.apple.com/join/YuXc2asc',
                   '_blank'
                 );"
-                  class="mt-4 btn-alt pr-8"
-                >
-                  <img
-                    alt="iOS App Store Logo"
-                    class="ml-1 w-5 hidden md:block lg:w-8"
-                    src="../assets/svg/apple.svg"
+                    class="mt-4 btn-alt pr-8"
                   >
-                  <span
-                    class="text-grey-dark font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs md:ml-4 md:pr-2 lg:text-sm"
-                  >Help us beta test our iOS app</span>
-                </button>
+                    <img
+                      alt="iOS App Store Logo"
+                      class="ml-1 w-5 hidden md:block lg:w-8"
+                      src="../assets/svg/apple.svg"
+                    >
+                    <span
+                      class="text-grey-dark font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs md:ml-4 md:pr-2 lg:text-sm"
+                    >Help us beta test our iOS app</span>
+                  </button>
+                </div>
               </div>
-            </div>
+            </transition>
           </div>
-          <img
-            class="rounded md:w-1/2 mt-12 md:mt-24"
-            alt="Recall illustration by "
-            src="../assets/img/recall-opening.jpg"
-          >
+          <transition appear name="fade">
+            <img
+              class="rounded md:w-1/2 mt-12 md:mt-24"
+              alt="Recall illustration by "
+              src="../assets/img/recall-opening.jpg"
+            >
+          </transition>
         </div>
       </div>
       <div id="features" class="mt-24 md:pt-32">
@@ -114,7 +126,7 @@
         <div
           class="flex flex-col items-center content-center self-center justify-between md:flex-row"
         >
-          <div class="md:w-1/2">
+          <div class="md:w-1/2" v-scroll-reveal="{ delay: 250, distance: '5%'}">
             <img
               class="w-3/4 mt-24 md:mt-32 md:-ml-12"
               alt="Recall illustration by "

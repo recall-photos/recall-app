@@ -5,7 +5,7 @@
       :key="item.card_id"
       class="mt-8 max-w-md w-full flex flex-row items-start p-4 border-r border-b border-l border-grey-light border-t bg-white rounded md:p-6 lg:p-10"
     >
-      <div class="w-1/5 mr-3 md:mr-5">
+      <div class="w-1/5 mr-3 md:mr-5" v-scroll-reveal="{ delay: 500, distance: '25%'}">
         <img class :src="item.card_img">
       </div>
       <div class="w-4/5 md:w-5/6 flex flex-col justify-center items-start text-left">
