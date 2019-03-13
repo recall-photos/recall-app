@@ -2,8 +2,7 @@
   <transition name="modal">
     <div class="modal-mask" @click="$emit('close')">
       <div class="modal-container">
-        <img v-bind:src="photoUrl"
-             alt="">
+        <img v-bind:src="photoUrl" alt="" />
       </div>
     </div>
   </transition>
@@ -11,10 +10,10 @@
 
 <script>
 export default {
-  name: 'PhotoModal',
+  name: "PhotoModal",
   props: {
-    photoUrl: String,
-  },
+    photoUrl: String
+  }
 };
 </script>
 
@@ -25,10 +24,10 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height:100%;
-  background-color: rgba(0, 0, 0, .5);
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: table;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
   overflow: scroll;
 }
 
@@ -36,8 +35,8 @@ export default {
   display: block;
   background-color: transparent;
   border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;
   height: 100vh;
   text-align: center;

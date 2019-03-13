@@ -1,27 +1,44 @@
 <template>
   <div class="mt-32 pt-24 pb-16 bg-white p-8 border-purple-light border-t-2">
     <div class="container mx-auto text-left opacity-75 text-sm lg:px-4">
-      <div class="flex flex-col justify-center items-start content-start md:flex-row mb-4">
+      <div
+        class="flex flex-col justify-center items-start content-start md:flex-row mb-4"
+      >
         <div class="sm:w-1/4 h-auto">
           <div class="font-mono font-bold text-grey-darkest mb-4">Recall</div>
           <ul class="list-reset leading-normal cursor-pointer">
             <li class="mb-2">
-              <a class="link hover:text-purple-dark text-grey-darker" href="#start">Sign In</a>
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="#start"
+                >Sign In</a
+              >
             </li>
             <li class="mb-2">
-              <a class="link hover:text-purple-dark text-grey-darker" href="#features">Features</a>
+              <a
+                class="link hover:text-purple-dark text-grey-darker"
+                href="#features"
+                >Features</a
+              >
             </li>
             <li class="mb-2">
               <a
                 class="link hover:text-purple-dark text-grey-darker"
                 href="#get-started"
-              >How to get started</a>
+                >How to get started</a
+              >
             </li>
           </ul>
-          <p class="mt-10 text-left text-grey text-sm opacity-75 hidden md:block">© Recall Photos</p>
+          <p
+            class="mt-10 text-left text-grey text-sm opacity-75 hidden md:block"
+          >
+            © Recall Photos
+          </p>
         </div>
         <div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-          <div class="font-mono font-bold text-grey-darkest mb-4">Blockstack</div>
+          <div class="font-mono font-bold text-grey-darkest mb-4">
+            Blockstack
+          </div>
           <ul class="list-reset leading-normal cursor-pointer">
             <li class="mb-2">
               <a
@@ -29,7 +46,8 @@
                 href="https://youtu.be/7SmC7AuZNWY"
                 target="_blank"
                 rel="noopener noreferrer"
-              >What is Blockstack?</a>
+                >What is Blockstack?</a
+              >
             </li>
             <li class="mb-2">
               <a
@@ -37,7 +55,8 @@
                 href="https://github.com/blockstack/gaia"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Storage (Gaia)</a>
+                >Storage (Gaia)</a
+              >
             </li>
             <li class="mb-2">
               <a
@@ -45,7 +64,8 @@
                 href="https://app.co/mining/apps"
                 target="_blank"
                 rel="noopener noreferrer"
-              >App Mining</a>
+                >App Mining</a
+              >
             </li>
           </ul>
         </div>
@@ -66,7 +86,8 @@
                 href="mailto:support@recall.photos"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Contact</a>
+                >Contact</a
+              >
             </li>
             <li class="mb-2">
               <a
@@ -74,7 +95,8 @@
                 href="https://trello.com/b/EMKJ0T7f/recall-roadmap"
                 target="_blank"
                 rel="noopener noreferrer"
-              >Roadmap</a>
+                >Roadmap</a
+              >
             </li>
           </ul>
         </div>
@@ -108,7 +130,11 @@
                 rel="noopener noreferrer"
                 title="Twitter"
               >
-                <img alt="Twitter Icon" class="w-14" src="../assets/svg/footer/twitter.svg">
+                <img
+                  alt="Twitter Icon"
+                  class="w-14"
+                  src="../assets/svg/footer/twitter.svg"
+                />
               </a>
               <!-- <a
               class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
@@ -126,7 +152,11 @@
                 rel="noopener noreferrer"
                 title="Product Hunt"
               >
-                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd">
+                <svg
+                  viewBox="0 0 40 40"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill-rule="evenodd"
+                >
                   <path
                     d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20"
                   ></path>

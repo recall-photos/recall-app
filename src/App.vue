@@ -1,35 +1,35 @@
 <template>
   <div id="app">
     <TopMenu v-if="authenticated" />
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import * as blockstack from 'blockstack';
-import TopMenu from '@/components/TopMenu.vue';
+import * as blockstack from "blockstack";
+import TopMenu from "@/components/TopMenu.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return this.$store.state.UserStore;
   },
   methods: {
     logout() {
       blockstack.signUserOut(window.location.origin);
-    },
+    }
   },
   components: {
-    TopMenu,
-  },
+    TopMenu
+  }
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 
 #app {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
