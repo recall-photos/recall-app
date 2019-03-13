@@ -62,10 +62,18 @@
             <!-- eslint-enable -->
             <h2
               class="text-left text-black font-sans font-semi leading-tight mt-8 text-base lg:mt-12 lg:text-2xl"
-            >The most secure, free, end-to-end encrypted and open-source alternative to Google Photos</h2>
+            >
+              The most secure, free, end-to-end encrypted and open-source
+              alternative to Google Photos
+            </h2>
             <p
               class="mt-4 text-left text-black font-sans font-normal leading-normal opacity-75 text-sm md:text-base"
-            >Your new personal photo vault. We believe that photos are a true reflection of your life so you’ll want to keep them safe and private, storing them without any restrictions while retaining full ownership and privacy.</p>
+            >
+              Your new personal photo vault. We believe that photos are a true
+              reflection of your life so you’ll want to keep them safe and
+              private, storing them without any restrictions while retaining
+              full ownership and privacy.
+            </p>
             <transition appear name="fadeLeft">
               <div class="mt-6 lg:mt-12">
                 <div v-if="authenticated">Logged in</div>
@@ -81,10 +89,12 @@
                     >Start using it with Blockstack</span>
                   </button>
                   <button
-                    @click="window.open(
-                  'https://testflight.apple.com/join/YuXc2asc',
-                  '_blank'
-                );"
+                    @click="
+                      window.open(
+                        'https://testflight.apple.com/join/YuXc2asc',
+                        '_blank'
+                      )
+                    "
                     class="mt-4 btn-alt pr-8"
                   >
                     <img
@@ -126,7 +136,7 @@
         <div
           class="flex flex-col items-center content-center self-center justify-between md:flex-row"
         >
-          <div class="md:w-1/2" v-scroll-reveal="{ delay: 250, distance: '5%'}">
+          <div class="md:w-1/2" v-scroll-reveal="{ delay: 250, distance: '5%' }">
             <img
               class="w-3/4 mt-24 md:mt-32 md:-ml-12"
               alt="Recall illustration by "
@@ -181,7 +191,7 @@ export default {
   methods: {
     login() {
       const { origin } = window.location;
-      blockstack.redirectToSignIn(origin, `${origin}/manifest.json`, [
+      blockstack.redirectToSignIn(origin, `${origin}/site.webmanifest`, [
         "store_write",
         "publish_data"
       ]);
@@ -260,10 +270,9 @@ export default {
           card_id: 1,
           card_img: require("../assets/img/1.png"),
           card_title: "Create an account with Blockstack",
-          card_paragraph:
-            "To start using Recall, first you need to create an account with Blockstack. This is your personal identity on the new web. Learn more about it " +
-            <a href="https://blockstack.org/">here</a> +
-            "."
+          card_paragraph: `To start using Recall, first you need to create an account with Blockstack. This is your personal identity on the new web. Learn more about it ${(
+            <a href="https://blockstack.org/">here</a>
+          )}.`
         },
         {
           card_id: 2,
