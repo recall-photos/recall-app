@@ -46,23 +46,19 @@
               class="text-left text-black font-sans font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
             >
               Recall
-              <!-- eslint-disable -->
-              <!-- prettier-ignore-start -->
               <vue-typer
-              :text='["happy memories","family trips","old friendships", "your friends", "loved ones", "your stories","special moments", "past adventures", "holidays abroad"]'''
-              :repeat="Infinity"
-              :shuffle="true"
-              initial-action="typing"
-              :pre-type-delay="70"
-              :type-delay="70"
-              :pre-erase-delay="2000"
-              :erase-delay="250"
-              erase-style="backspace"
-              :erase-on-complete="false"
-              caret-animation="smooth"
+                :text="typerItems"
+                :repeat="Infinity"
+                :shuffle="true"
+                initial-action="typing"
+                :pre-type-delay="70"
+                :type-delay="70"
+                :pre-erase-delay="2000"
+                :erase-delay="250"
+                erase-style="backspace"
+                :erase-on-complete="false"
+                caret-animation="smooth"
               />
-              <!-- prettier-ignore-end -->
-              <!-- eslint-enable -->
             </h1>
             <h2
               class="text-left text-black font-sans font-semi leading-tight mt-8 text-base lg:mt-12 lg:text-2xl"
@@ -245,6 +241,17 @@ export default {
   data() {
     return {
       authenticated: this.$store.state.isAuthenticated,
+      typerItems: [
+        "happy memories",
+        "family trips",
+        "old friendships",
+        "your friends",
+        "loved ones",
+        "your stories",
+        "special moments",
+        "past adventures",
+        "holidays abroad"
+      ],
       iconItems: [
         {
           icon_id: 1,
