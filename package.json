@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
     "@fortawesome/vue-fontawesome": "^0.1.1",
+    "autoprefixer": "^9.4.10",
     "blockstack": "^18.3.0",
     "blockstack-large-storage": "^0.0.6",
     "browser-image-compression": "^0.0.3",
@@ -21,6 +22,7 @@
     "orientation-exif-blob": "^1.0.4",
     "pica": "^5.0.0",
     "sass-loader": "^7.1.0",
+    "tailwindcss": "^0.7.4",
     "uuid": "^3.3.2",
     "vue": "^2.5.17",
     "vue-js-modal": "^1.3.28",
@@ -42,7 +44,6 @@
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4",
     "prettier-vue": "^1.1.2",
-    "tailwindcss": "^0.7.4",
     "vue-template-compiler": "^2.5.17"
   }
 }
