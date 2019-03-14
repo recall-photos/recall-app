@@ -12,7 +12,10 @@
         <h3
           class="font-semibold leading-tight text-lg pr-12 lg:pr-0 md:text-xl"
         >{{ item.card_title }}</h3>
-        <p class="mt-2 font-regular leading-normal text-base opacity-75">{{ item.card_paragraph }}</p>
+        <p
+          v-html="item.card_paragraph"
+          class="mt-2 font-regular leading-normal text-base opacity-75"
+        >{{ item.card_paragraph }}</p>
       </div>
     </div>
   </div>
