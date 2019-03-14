@@ -1,0 +1,36 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+ */
+@tailwind preflight;
+
+/**
+ * This injects any component classes registered by plugins.
+ */
+@tailwind components;
+
+.btn {
+  @apply font-normal py-2 px-4 rounded inline-flex bg-purple-dark text-white items-center no-underline cursor-pointer;
+}
+
+.btn-alt {
+  @apply font-normal py-2 px-4 rounded inline-flex bg-white border-black border-r border-b border-l border-grey-light border-t text-black items-center no-underline cursor-pointer;
+}
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file. It also injects any utility classes registered by plugins.
+ */
+@tailwind utilities;
+
+/**
+ * Use this directive to control where Tailwind injects the responsive
+ * variations of each utility.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+ @tailwind screens;

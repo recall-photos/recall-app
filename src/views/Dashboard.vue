@@ -10,13 +10,23 @@
               @close="showModal = false"
             />
             <div v-if="Object.keys(groupedPhotos).length != 0">
-              <div v-for="(date) in Object.keys(groupedPhotos).sort().reverse()" :key="date">
+              <div
+                v-for="date in Object.keys(groupedPhotos)
+                  .sort()
+                  .reverse()"
+                :key="date"
+              >
                 <div class="cf mb4">
                   <h1 class="f3 lh-copy">
-                    {{groupedPhotos[date].date.format("ddd, MMM DD YYYY")}}
+                    {{ groupedPhotos[date].date.format("ddd, MMM DD YYYY") }}
                   </h1>
-                  <div v-for="(photo, index) in groupedPhotos[date].photos" :key="photo.path">
-                    <div v-bind:class="{'fl w-50': true, 'w-25-ns': (index != 4)}">
+                  <div
+                    v-for="(photo, index) in groupedPhotos[date].photos"
+                    :key="photo.path"
+                  >
+                    <div
+                      v-bind:class="{ 'fl w-50': true, 'w-25-ns': index != 4 }"
+                    >
                       <Photo :instance="photo" @open="openPhotoModal" />
                     </div>
                   </div>
@@ -25,7 +35,11 @@
             </div>
             <div v-else class="tc mt5 mb7">
               <div>
-                <img alt="Upload your photos" src="@/assets/photo-stack.svg" width="200">
+                <img
+                  alt="Upload your photos"
+                  src="@/assets/photo-stack.svg"
+                  width="200"
+                />
               </div>
               <div>
                 <h1>Drop your photos here to upload</h1>
@@ -37,10 +51,16 @@
           <div class="bg-white pv5 ml5">
             <div class="profile tl pv4 bb b--light-silver">
               <div class="dib w3 h3">
-                <img class="br-100 bg-silver w-100 h-100 db" :src="user.avatarUrl" alt="">
+                <img
+                  class="br-100 bg-silver w-100 h-100 db"
+                  :src="user.avatarUrl"
+                  alt=""
+                />
               </div>
               <div class="dib v-top mt2 ml3">
-                <div class="mb2"><b>{{ user.username }}</b></div>
+                <div class="mb2">
+                  <b>{{ user.username }}</b>
+                </div>
                 <div class="mb2">{{ user.name }}</div>
               </div>
             </div>
@@ -52,24 +72,24 @@
 </template>
 
 <script>
-import Photo from '../components/Photo.vue';
-import PhotoModal from '../components/PhotoModal.vue';
+import Photo from "../components/Photo.vue";
+import PhotoModal from "../components/PhotoModal.vue";
 
 export default {
-  name: 'Dashboard',
+  name: "Dashboard",
   data() {
     return {
       user: this.$store.state.UserStore,
       photos: this.$store.state.PhotoStore,
       selectedPhotoUrl: null,
-      showModal: false,
+      showModal: false
     };
   },
   computed: {
     groupedPhotos() {
       const byday = {};
       const photos = this.photos.photos || [];
-      photos.forEach((photo) => {
+      photos.forEach(photo => {
         const d = photo.bestDate();
         byday[d] = byday[d] || {};
         byday[d].date = photo.bestMoment();
@@ -77,11 +97,11 @@ export default {
         byday[d].photos.push(photo);
       });
       return byday;
-    },
+    }
   },
   components: {
     Photo,
-    PhotoModal,
+    PhotoModal
   },
   methods: {
     openPhotoModal(photo, photoUrl) {
@@ -93,12 +113,12 @@ export default {
       e.preventDefault();
 
       const { files } = e.dataTransfer;
-      this.$store.dispatch('PhotoStore/create', files);
-    },
+      this.$store.dispatch("PhotoStore/create", files);
+    }
   },
   mounted() {
-    this.$store.dispatch('UserStore/index');
-    this.$store.dispatch('PhotoStore/index');
-  },
+    this.$store.dispatch("UserStore/index");
+    this.$store.dispatch("PhotoStore/index");
+  }
 };
 </script>

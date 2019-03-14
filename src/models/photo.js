@@ -1,6 +1,6 @@
-import uuidv4 from 'uuid/v4';
-import exif from 'exif-js';
-import moment from 'moment';
+import uuidv4 from "uuid/v4";
+import exif from "exif-js";
+import moment from "moment";
 
 class Photo {
   setFile(file) {
@@ -11,13 +11,13 @@ class Photo {
     this.uploadedAt = Date.now();
     const photo = this;
     exif.getData(file, function callback() {
-      if (exif.getTag(this, 'DateTime')) {
-        const takenAt = exif.getTag(this, 'DateTime');
-        const momentDate = moment(takenAt, 'YYYY:MM:DD HH:mm:ss');
+      if (exif.getTag(this, "DateTime")) {
+        const takenAt = exif.getTag(this, "DateTime");
+        const momentDate = moment(takenAt, "YYYY:MM:DD HH:mm:ss");
         photo.takenAt = momentDate.valueOf();
       }
-      if (exif.getTag(this, 'Orientation')) {
-        photo.orientation = exif.getTag(this, 'Orientation');
+      if (exif.getTag(this, "Orientation")) {
+        photo.orientation = exif.getTag(this, "Orientation");
       }
     });
   }
@@ -34,18 +34,22 @@ class Photo {
 
   bestMoment() {
     if (this.takenAt) {
-      return moment(this.takenAt).startOf('day');
+      return moment(this.takenAt).startOf("day");
     } else if (this.uploadedAt) {
-      return moment(this.uploadedAt).startOf('day');
+      return moment(this.uploadedAt).startOf("day");
     }
-    return moment().startOf('day');
+    return moment().startOf("day");
   }
 
   bestDate() {
     if (this.takenAt) {
-      return moment(this.takenAt).startOf('day').valueOf();
+      return moment(this.takenAt)
+        .startOf("day")
+        .valueOf();
     } else if (this.uploadedAt) {
-      return moment(this.uploadedAt).startOf('day').valueOf();
+      return moment(this.uploadedAt)
+        .startOf("day")
+        .valueOf();
     }
     return 0;
   }

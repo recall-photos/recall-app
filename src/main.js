@@ -1,16 +1,26 @@
-import Vue from 'vue';
-import 'intersection-observer';
-import VueObserveVisibility from 'vue-observe-visibility';
-import App from './App.vue';
-import router from './router';
-import store from './vuex';
-import './helpers/icons';
+import Vue from "vue";
+import "@/assets/css/tailwind.css";
+import "intersection-observer";
+import VueObserveVisibility from "vue-observe-visibility";
+import VModal from "vue-js-modal";
+import vueSmoothScroll from "vue2-smooth-scroll";
+import VueScrollReveal from "vue-scroll-reveal";
+import VuePlyr from "vue-plyr";
+import "vue-plyr/dist/vue-plyr.css";
+import App from "./App.vue";
+import router from "./router";
+import store from "./vuex";
+import "./helpers/icons";
 
+Vue.use(vueSmoothScroll);
+Vue.use(VueScrollReveal);
+Vue.use(VModal);
 Vue.use(VueObserveVisibility);
+Vue.use(VuePlyr);
 Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
-  render: h => h(App),
-}).$mount('#app');
+  render: h => h(App)
+}).$mount("#app");
