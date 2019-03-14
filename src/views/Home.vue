@@ -144,7 +144,7 @@
             >
           </div>
           <div class="flex flex-col items-center md:w-1/2">
-            <SmallCard v-bind:SmallCardItems="SmallCardItems"></SmallCard>
+            <SmallCard v-bind:smallCardItems="smallCardItems"></SmallCard>
             <a
               @click="$modal.show('quickstart-video')"
               class="mt-10 text-sm text-black no-underline hover:underline hover:text-purple-dark opacity-75 cursor-pointer hidden lg:block"
@@ -265,7 +265,7 @@ export default {
             "Soon you will be able to share your photos with others, without losing any of the privacy benefits offered by Recall."
         }
       ],
-      SmallCardItems: [
+      smallCardItems: [
         {
           card_id: 1,
           card_img: require("../assets/img/1.png"),
