@@ -317,7 +317,7 @@ export default {
         {
           card_id: 2,
           card_img: NumberTwo,
-          card_title: "Authorise Recall to access your ID",
+          card_title: "Authorize Recall to access your ID",
           card_paragraph:
             "After you have your ID, you will need to authorize Recall to write on your hub. Think of your hub as your personal and secure space that only you can access."
         },
