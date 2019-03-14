@@ -172,7 +172,7 @@
               <div
                 class="flex flex-col justify-center content-center items-center self-center"
               >
-                <plyr>
+                <vue-plyr>
                   <video
                     src="../assets/video/recall-demo.mp4"
                     id="player"
@@ -182,7 +182,7 @@
                     quality="large"
                     style="max-width: 800px"
                   />
-                </plyr>
+                </vue-plyr>
                 <button
                   @click="$modal.hide('quickstart-video')"
                   class="btn mt-4 font-bold"
@@ -207,7 +207,6 @@ import SmallCard from "@/components/SmallCard.vue";
 import Icon from "@/components/Icon.vue";
 
 import { VueTyper } from "vue-typer";
-import { PlyrVideo } from "vue-plyr";
 import "vue-plyr/dist/vue-plyr.css";
 
 import Private from "../assets/svg/features/private.svg";
@@ -335,7 +334,6 @@ export default {
   components: {
     Footer,
     VueTyper,
-    PlyrVideo,
     SmallCard,
     Icon
   }
