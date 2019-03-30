@@ -308,14 +308,14 @@ export default {
           card_id: 1,
           card_img: NumberOne,
           card_title: "Create an account with Blockstack",
-          card_paragraph: `To start using Recall, first you need to create an account with Blockstack. This is your personal identity on the new web. Learn more about it <a href="https://blockstack.org/">here</a>.`
+          card_paragraph: `To start using Recall, you need to create a free and instantly available account with Blockstack. This is your personal identity on the new web. Learn more about it <a href="https://blockstack.org/">here</a>.`
         },
         {
           card_id: 2,
           card_img: NumberTwo,
           card_title: "Authorize Recall to access your ID",
           card_paragraph:
-            "After you have your ID, you will need to authorize Recall to write on your hub. Think of your hub as your personal and secure space that only you can access."
+            "After you have your ID, you will need to authorize Recall to write on your hub (provided freely by Blockstack). Think of your hub as your personal and secure space that only you can access."
         },
         {
           card_id: 3,
