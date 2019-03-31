@@ -2,6 +2,7 @@
   <div id="app">
     <TopMenu v-if="authenticated" />
     <router-view />
+    <notifications group="errors" position="bottom right" />
   </div>
 </template>
 

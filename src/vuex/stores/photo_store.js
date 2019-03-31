@@ -1,3 +1,4 @@
+import Vue from "vue";
 import { writeFile, readFile } from "blockstack-large-storage";
 import imageCompression from "browser-image-compression";
 import Photo from "@/models/photo";
@@ -60,9 +61,29 @@ const PhotoStore = {
       const readOptions = { decrypt: true };
       const numberOfFiles = Array.from(files).length;
 
+      const displayError = () => {
+        Vue.notify({
+          group: "errors",
+          title: "Error storing photo",
+          text: "There was an error storing your photo. Please try again.",
+          type: "error"
+        });
+      };
+
       readFile("photos.json", readOptions).then(photosFile => {
         let processedFiles = 0;
         const photos = JSON.parse(photosFile || "[]");
+
+        const photoProcessed = () => {
+          processedFiles += 1;
+          if (processedFiles === numberOfFiles * 2) {
+            const jsonString = JSON.stringify(photos);
+            writeFile("photos.json", jsonString, writeOptions).catch(() => {
+              displayError();
+            });
+            context.commit("loading", false);
+          }
+        };
 
         Array.from(files).forEach(file => {
           const photo = new Photo();
@@ -76,27 +97,21 @@ const PhotoStore = {
             imageCompression(file, 0.1, 800)
               .then(compressedFile => {
                 writeFile(photo.compressedPath, compressedFile, writeOptions);
-
-                processedFiles += 1;
-                if (processedFiles === numberOfFiles * 2) {
-                  const jsonString = JSON.stringify(photos);
-                  writeFile("photos.json", jsonString, writeOptions);
-                  context.commit("loading", false);
-                }
+                photoProcessed();
               })
-              .catch(error => {
-                console.log(error.message);
+              .catch(() => {
+                displayError();
+                photoProcessed();
               });
-            writeFile(photo.path, arrayBuffer, writeOptions).then(() => {
-              context.commit("prepend", photo);
-
-              processedFiles += 1;
-              if (processedFiles === numberOfFiles * 2) {
-                const jsonString = JSON.stringify(photos);
-                writeFile("photos.json", jsonString, writeOptions);
-                context.commit("loading", false);
-              }
-            });
+            writeFile(photo.path, arrayBuffer, writeOptions)
+              .then(() => {
+                context.commit("prepend", photo);
+                photoProcessed();
+              })
+              .catch(() => {
+                displayError();
+                photoProcessed();
+              });
           };
           reader.readAsArrayBuffer(file);
         });
