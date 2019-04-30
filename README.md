@@ -49,7 +49,7 @@ Work in progress 🏗
 
 recall-app is under the GPLv3 and the MPLv2 license.
 
-See [LICENSE]() for more license info.
+See [LICENSE](https://github.com/recall-photos/recall-app/blob/master/LICENSE) for more license info.
 
 ---
 

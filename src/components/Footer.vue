@@ -136,15 +136,15 @@
                   src="../assets/svg/footer/twitter.svg"
                 />
               </a>
-              <!-- <a
+              <a
               class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
-              href="https://twitter.com/recallphotos"
+              href="https://discord.gg/JpCBs2X"
               target="_blank"
               rel="noopener noreferrer"
-              title="Twitter"
+              title="Discord"
             >
               <img alt="Twitter Icon" class="w-8" src="../assets/svg/footer/discord.svg">
-              </a>-->
+              </a>
               <a
                 class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
                 href="https://www.producthunt.com/posts/recall-3"
