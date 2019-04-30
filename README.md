@@ -47,9 +47,9 @@ Work in progress 🏗
 
 ## License
 
-recall-ios is under the GPLv3 and the MPLv2 license.
+recall-app is under the GPLv3 and the MPLv2 license.
 
-See [LICENSE](https://github.com/jackveiga/recall-app/blob/master/LICENSE) for more license info.
+See [LICENSE]() for more license info.
 
 ---
 
