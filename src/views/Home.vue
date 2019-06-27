@@ -93,7 +93,7 @@
                     >
                   </button>
                   <a
-                    href="https://testflight.apple.com/join/YuXc2asc"
+                    href="https://apps.apple.com/us/app/recall-secure-photo-storage/id1449873085"
                     target="_blank"
                     class="mt-4 btn-alt pr-8"
                   >
@@ -104,7 +104,7 @@
                     />
                     <span
                       class="text-grey-dark font-mono font-bold pt-2 pb-2 lg:pt-0 lg:pb-0 text-xs md:ml-4 md:pr-2 lg:text-sm"
-                      >Help us beta test our iOS app</span
+                      >Download iOS app on the App Store</span
                     >
                   </a>
                 </div>
