@@ -43,11 +43,11 @@ Work in progress 🏗
 
 ## Project board
 
-You can keep track of what is happening on this project by heading over to our [project board](https://github.com/orgs/recall-photos/projects/1) here in github.
+You can keep track of what is happening on this project by heading over to our [project board](https://github.com/orgs/recall-photos/projects/1) here on github.
 
 ## Roadmap
 
-To get an overview of the current development status head over to [our roadmap](https://github.com/orgs/recall-photos/projects/2).
+To get an overview of our quarterly status head over to [our roadmap](https://www.notion.so/donesunday/77d1873c848c4e7c9f4ea8e22e76d882?v=e9b345dc2c104071ad61a74b7ada3322).
 
 ## License
 
