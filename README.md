@@ -59,4 +59,4 @@ See [LICENSE](https://github.com/recall-photos/recall-app/blob/master/LICENSE) f
 
 Made at [Done Sunday](http://donesunday.com/) 🌞 by [@alvesjtiago](https://twitter.com/alvesjtiago) and [@jackveiga](https://twitter.com/jackveiga).
 
-Join us on [Discord](https://discord.gg/JpCBs2X) to help shape Recall's future.
+Join us on [Discord](https://chat.donesunday.com) to help shape Recall's future.
