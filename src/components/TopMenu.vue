@@ -1,9 +1,16 @@
 <template>
-  <div class="top-menu w-100 bg-light-gray pa3">
-    <div class="mw9 center ph3-ns">
-      <div class="tr f4">
-        <a href="#" @click="$refs.file.click()" class="gray mh2">
-          <font-awesome-icon icon="upload" />
+  <div class="top-menu w-100 pa3 pl4 pr4 border-b border-solid flex">
+    <div class="flex-1 text-left inline-block">
+      <img alt="Recall Logo" class="cursor-pointer w-32" src="@/assets/svg/logo.svg" />
+    </div>
+    <div class="flex-1 align-middle text-right center inline-block">
+      <div class="tr f4 h-100">
+        <a href="#" @click="$refs.file.click()" class="gray mh2 h-100 inline-block align-middle">
+          <img
+            alt="Recall Logo"
+            class="cursor-pointer w-5 h-100 inline-block align-middle"
+            src="@/assets/svg/plus.svg"
+          />
         </a>
         <input
           type="file"
@@ -15,9 +22,6 @@
           class="input-file"
           v-show="false"
         />
-        <a href="#" @click="logout" class="gray mh2">
-          <font-awesome-icon icon="power-off" />
-        </a>
       </div>
     </div>
 
@@ -30,24 +34,24 @@
 </template>
 
 <script>
-import * as blockstack from "blockstack";
-import Loading from "vue-loading-overlay";
-import "vue-loading-overlay/dist/vue-loading.css";
+import * as blockstack from 'blockstack'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
 
 export default {
-  name: "TopMenu",
+  name: 'TopMenu',
   components: {
     Loading
   },
   methods: {
     logout() {
-      blockstack.signUserOut(window.location.origin);
+      blockstack.signUserOut(window.location.origin)
     },
     filesChange(name, files) {
-      this.$store.dispatch("PhotoStore/create", files);
+      this.$store.dispatch('PhotoStore/create', files)
     }
   }
-};
+}
 </script>
 
 <style scoped></style>
