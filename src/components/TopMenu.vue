@@ -12,7 +12,7 @@
         <a
           href="#"
           @click="$refs.file.click()"
-          class="gray mh2 h-100 inline-block align-middle"
+          class="gray mr-4 h-100 inline-block align-middle"
         >
           <img
             alt="Recall Logo"
@@ -30,6 +30,14 @@
           class="input-file"
           v-show="false"
         />
+
+        <a href="#" class="gray mh2 h-100 inline-block align-middle">
+          <img
+            alt="Menu"
+            class="cursor-pointer w-5 h-100 inline-block align-middle"
+            src="@/assets/svg/menu.svg"
+          />
+        </a>
       </div>
     </div>
 
