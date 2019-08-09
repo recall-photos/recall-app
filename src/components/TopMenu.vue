@@ -1,11 +1,19 @@
 <template>
   <div class="top-menu w-100 pa3 pl4 pr4 border-b border-solid flex">
     <div class="flex-1 text-left inline-block">
-      <img alt="Recall Logo" class="cursor-pointer w-32" src="@/assets/svg/logo.svg" />
+      <img
+        alt="Recall Logo"
+        class="cursor-pointer w-32"
+        src="@/assets/svg/logo.svg"
+      />
     </div>
     <div class="flex-1 align-middle text-right center inline-block">
       <div class="tr f4 h-100">
-        <a href="#" @click="$refs.file.click()" class="gray mh2 h-100 inline-block align-middle">
+        <a
+          href="#"
+          @click="$refs.file.click()"
+          class="gray mh2 h-100 inline-block align-middle"
+        >
           <img
             alt="Recall Logo"
             class="cursor-pointer w-5 h-100 inline-block align-middle"

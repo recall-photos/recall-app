@@ -196,136 +196,136 @@
 </template>
 
 <script>
-import * as blockstack from "blockstack";
+import * as blockstack from 'blockstack'
 
-import Footer from "@/components/Footer.vue";
-import SmallCard from "@/components/SmallCard.vue";
-import Icon from "@/components/Icon.vue";
+import Footer from '@/components/Footer.vue'
+import SmallCard from '@/components/SmallCard.vue'
+import Icon from '@/components/Icon.vue'
 
-import { VueTyper } from "vue-typer";
-import "vue-plyr/dist/vue-plyr.css";
+import { VueTyper } from 'vue-typer'
+import 'vue-plyr/dist/vue-plyr.css'
 
-import Private from "../assets/svg/features/private.svg";
-import Simple from "../assets/svg/features/simple.svg";
-import OpenSource from "../assets/svg/features/open-source.svg";
-import Storage from "../assets/svg/features/storage-lock.svg";
-import Search from "../assets/svg/features/search.svg";
-import Friends from "../assets/svg/features/friends.svg";
+import Private from '../assets/svg/features/private.svg'
+import Simple from '../assets/svg/features/simple.svg'
+import OpenSource from '../assets/svg/features/open-source.svg'
+import Storage from '../assets/svg/features/storage-lock.svg'
+import Search from '../assets/svg/features/search.svg'
+import Friends from '../assets/svg/features/friends.svg'
 
-import NumberOne from "../assets/img/1.png";
-import NumberTwo from "../assets/img/2.png";
-import NumberThree from "../assets/img/3.png";
+import NumberOne from '../assets/img/1.png'
+import NumberTwo from '../assets/img/2.png'
+import NumberThree from '../assets/img/3.png'
 
 export default {
-  name: "home",
+  name: 'home',
   methods: {
     login() {
-      const { origin } = window.location;
+      const { origin } = window.location
       blockstack.redirectToSignIn(origin, `${origin}/manifest.json`, [
-        "store_write",
-        "publish_data"
-      ]);
+        'store_write',
+        'publish_data'
+      ])
     },
     show() {
-      this.$modal.show("quickstart-video");
+      this.$modal.show('quickstart-video')
     },
     hide() {
-      this.$modal.hide("quickstart-video");
+      this.$modal.hide('quickstart-video')
     }
   },
   data() {
     return {
       authenticated: this.$store.state.isAuthenticated,
       typerItems: [
-        "happy memories",
-        "family trips",
-        "old friendships",
-        "your friends",
-        "loved ones",
-        "your stories",
-        "special moments",
-        "past adventures",
-        "holidays abroad"
+        'happy memories',
+        'family trips',
+        'old friendships',
+        'your friends',
+        'loved ones',
+        'your stories',
+        'special moments',
+        'past adventures',
+        'holidays abroad'
       ],
       iconItems: [
         {
           icon_id: 1,
-          icon_opacity: "opacity: 1;",
-          icon_color: "color: #111111",
+          icon_opacity: 'opacity: 1;',
+          icon_color: 'color: #111111',
           icon_svg: Private,
-          icon_title: "Private and free",
+          icon_title: 'Private and free',
           icon_paragraph:
-            "No one but you has access to your photos. Choose where to store your photos or use the free space Blockstack provides."
+            'No one but you has access to your photos. Choose where to store your photos or use the free space Blockstack provides.'
         },
         {
           icon_id: 2,
-          icon_opacity: "opacity: 1",
-          icon_color: "color: #111111",
+          icon_opacity: 'opacity: 1',
+          icon_color: 'color: #111111',
           icon_svg: Simple,
-          icon_title: "Simple to use",
+          icon_title: 'Simple to use',
           icon_paragraph:
-            "It’s extremely simple to use our apps, both on desktop and mobile. Login via Blockstack auth and start uploading your photos."
+            'It’s extremely simple to use our apps, both on desktop and mobile. Login via Blockstack auth and start uploading your photos.'
         },
         {
           icon_id: 3,
-          icon_opacity: "opacity: 1",
-          icon_color: "color: #111111",
+          icon_opacity: 'opacity: 1',
+          icon_color: 'color: #111111',
           icon_svg: OpenSource,
-          icon_title: "Open source",
+          icon_title: 'Open source',
           icon_paragraph:
-            "All our code is open sourced on Github. You can review how we treat your photos and contribute to future features."
+            'All our code is open sourced on Github. You can review how we treat your photos and contribute to future features.'
         },
         {
           icon_id: 4,
-          icon_opacity: "opacity: 1",
-          icon_color: "color: #111111",
+          icon_opacity: 'opacity: 1',
+          icon_color: 'color: #111111',
           icon_svg: Storage,
-          icon_title: "No storage lock-in",
+          icon_title: 'No storage lock-in',
           icon_paragraph:
-            "Change your storage provider at any time. You will never lose your photos even if Recall stops working tomorrow."
+            'Change your storage provider at any time. You will never lose your photos even if Recall stops working tomorrow.'
         },
         {
           icon_id: 5,
-          icon_opacity: "opacity: 0.5",
-          icon_color: "color: grey;",
+          icon_opacity: 'opacity: 0.5',
+          icon_color: 'color: grey;',
           icon_svg: Search,
-          icon_title: "Search your photos",
+          icon_title: 'Search your photos',
           icon_paragraph:
-            "You will be able to search your photos by location, time and other data. Wherever you are, Recall is available."
+            'You will be able to search your photos by location, time and other data. Wherever you are, Recall is available.'
         },
         {
           icon_id: 6,
-          icon_opacity: "opacity: 0.5",
-          icon_color: "color: grey;",
+          icon_opacity: 'opacity: 0.5',
+          icon_color: 'color: grey;',
           icon_svg: Friends,
-          icon_title: "Share with friends",
+          icon_title: 'Share with friends',
           icon_paragraph:
-            "Soon you will be able to share your photos with others, without losing any of the privacy benefits offered by Recall."
+            'Soon you will be able to share your photos with others, without losing any of the privacy benefits offered by Recall.'
         }
       ],
       smallCardItems: [
         {
           card_id: 1,
           card_img: NumberOne,
-          card_title: "Create an account with Blockstack",
+          card_title: 'Create an account with Blockstack',
           card_paragraph: `To start using Recall, you need to create a free and instantly available account with Blockstack. This is your personal identity on the new web. Learn more about it <a href="https://blockstack.org/">here</a>.`
         },
         {
           card_id: 2,
           card_img: NumberTwo,
-          card_title: "Authorize Recall to access your ID",
+          card_title: 'Authorize Recall to access your ID',
           card_paragraph:
-            "After you have your ID, you will need to authorize Recall to write on your hub (provided freely by Blockstack). Think of your hub as your personal and secure space that only you can access."
+            'After you have your ID, you will need to authorize Recall to write on your hub (provided freely by Blockstack). Think of your hub as your personal and secure space that only you can access.'
         },
         {
           card_id: 3,
           card_img: NumberThree,
-          card_title: "Upload your images to Recall",
+          card_title: 'Upload your images to Recall',
           card_paragraph:
-            "All set! Upload your photos and they will be stored on the provider of your choice (by default Blockstack provides their own hub but you can change this later)."
+            'All set! Upload your photos and they will be stored on the provider of your choice (by default Blockstack provides their own hub but you can change this later).'
         }
       ]
-    };
+    }
   },
   components: {
     Footer,
@@ -333,5 +333,5 @@ export default {
     SmallCard,
     Icon
   }
-};
+}
 </script>

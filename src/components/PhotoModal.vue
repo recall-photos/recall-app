@@ -10,11 +10,11 @@
 
 <script>
 export default {
-  name: "PhotoModal",
+  name: 'PhotoModal',
   props: {
     photoUrl: String
   }
-};
+}
 </script>
 
 <style scoped>

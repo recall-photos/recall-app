@@ -137,13 +137,17 @@
                 />
               </a>
               <a
-              class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
-              href="https://chat.donesunday.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Discord"
-            >
-              <img alt="Twitter Icon" class="w-8" src="../assets/svg/footer/discord.svg">
+                class="opacity-75 hover:fill-purple inline-block w-8 mr-4"
+                href="https://chat.donesunday.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Discord"
+              >
+                <img
+                  alt="Twitter Icon"
+                  class="w-8"
+                  src="../assets/svg/footer/discord.svg"
+                />
               </a>
               <a
                 class="opacity-75 hover:fill-purple inline-block w-8 mr-4"

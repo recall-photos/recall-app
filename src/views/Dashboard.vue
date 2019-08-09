@@ -18,7 +18,7 @@
               >
                 <div class="cf mb4">
                   <h1 class="f3 lh-copy">
-                    {{ groupedPhotos[date].date.format("ddd, MMM DD YYYY") }}
+                    {{ groupedPhotos[date].date.format('ddd, MMM DD YYYY') }}
                   </h1>
                   <div
                     v-for="(photo, index) in groupedPhotos[date].photos"
@@ -72,31 +72,31 @@
 </template>
 
 <script>
-import Photo from "../components/Photo.vue";
-import PhotoModal from "../components/PhotoModal.vue";
+import Photo from '../components/Photo.vue'
+import PhotoModal from '../components/PhotoModal.vue'
 
 export default {
-  name: "Dashboard",
+  name: 'Dashboard',
   data() {
     return {
       user: this.$store.state.UserStore,
       photos: this.$store.state.PhotoStore,
       selectedPhotoUrl: null,
       showModal: false
-    };
+    }
   },
   computed: {
     groupedPhotos() {
-      const byday = {};
-      const photos = this.photos.photos || [];
+      const byday = {}
+      const photos = this.photos.photos || []
       photos.forEach(photo => {
-        const d = photo.bestDate();
-        byday[d] = byday[d] || {};
-        byday[d].date = photo.bestMoment();
-        byday[d].photos = byday[d].photos || [];
-        byday[d].photos.push(photo);
-      });
-      return byday;
+        const d = photo.bestDate()
+        byday[d] = byday[d] || {}
+        byday[d].date = photo.bestMoment()
+        byday[d].photos = byday[d].photos || []
+        byday[d].photos.push(photo)
+      })
+      return byday
     }
   },
   components: {
@@ -105,20 +105,20 @@ export default {
   },
   methods: {
     openPhotoModal(photo, photoUrl) {
-      this.selectedPhotoUrl = photoUrl;
-      this.showModal = true;
+      this.selectedPhotoUrl = photoUrl
+      this.showModal = true
     },
     uploadFile(e) {
-      e.stopPropagation();
-      e.preventDefault();
+      e.stopPropagation()
+      e.preventDefault()
 
-      const { files } = e.dataTransfer;
-      this.$store.dispatch("PhotoStore/create", files);
+      const { files } = e.dataTransfer
+      this.$store.dispatch('PhotoStore/create', files)
     }
   },
   mounted() {
-    this.$store.dispatch("UserStore/index");
-    this.$store.dispatch("PhotoStore/index");
+    this.$store.dispatch('UserStore/index')
+    this.$store.dispatch('PhotoStore/index')
   }
-};
+}
 </script>
