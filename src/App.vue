@@ -28,9 +28,18 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
 
 #app {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
