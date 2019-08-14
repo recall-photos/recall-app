@@ -40,21 +40,21 @@
                   v-if="showModal"
                   @close="showModal = false"
                 />
-                <div class="flex items-center mb-10">
-                  <div
-                    class="rounded-full border border-gray-400 h-10 w-10 flex flex-wrap"
-                  >
-                    <img
-                      src="@/assets/photo.svg"
-                      alt="Photo icon"
-                      class="block mx-auto"
-                    />
-                  </div>
-                  <div class="text-standard font-medium text-2xl ml-2">
-                    Photos
-                  </div>
-                </div>
                 <div v-if="Object.keys(groupedPhotos).length != 0">
+                  <div class="flex items-center mb-10">
+                    <div
+                      class="rounded-full border border-gray-400 h-10 w-10 flex flex-wrap"
+                    >
+                      <img
+                        src="@/assets/photo.svg"
+                        alt="Photo icon"
+                        class="block mx-auto"
+                      />
+                    </div>
+                    <div class="text-standard font-medium text-2xl ml-2">
+                      Photos
+                    </div>
+                  </div>
                   <div
                     v-for="date in Object.keys(groupedPhotos)
                       .sort()
