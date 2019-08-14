@@ -1,27 +1,39 @@
 <template>
-  <div class="flex">
+  <div class="flex min-h-full">
     <div class="flex-initial border-r border-gray-200 p32 p-8">
       <ul class="list-reset text-left text-base mb-12">
-        <li class="mb-6">Photos</li>
-        <li class="mb-6">Albums</li>
-        <li class="mb-6">Sharing</li>
-        <li class="mb-6">Trash</li>
+        <li class="mb-6 active font-semibold">Photos</li>
+        <li class="mb-6 disabled">Albums</li>
+        <li class="mb-6 disabled">Sharing</li>
+        <li class="mb-6 disabled">Trash</li>
       </ul>
 
       <ul class="list-reset text-left text-base mb-24">
-        <li class="mb-6">Settings</li>
-        <li class="mb-6">Download app</li>
+        <li class="mb-6 disabled">Settings</li>
+        <li class="mb-6">
+          <a
+            href="https://apps.apple.com/us/app/recall-secure-photo-storage/id1449873085"
+            target="_blank"
+          >
+            Download app
+          </a>
+        </li>
       </ul>
 
       <ul class="list-reset text-left text-base">
-        <li class="mb-6">Unlimited storage</li>
+        <li class="mb-3">Unlimited storage</li>
+        <li class="text-xs">
+          <a href="https://github.com/blockstack/gaia" target="_blank">
+            Provided by Blockstack *
+          </a>
+        </li>
       </ul>
     </div>
     <div class="flex-auto">
       <div @drop="uploadFile" @dragover.prevent>
         <div class="mw9 center ph3-ns">
           <div class="cf ph2-ns">
-            <div class="fl w-100 w-75-ns pa2">
+            <div class="fl w-100 pa2">
               <div class="bg-white pv4 tl">
                 <PhotoModal
                   v-bind:photoUrl="selectedPhotoUrl"
@@ -58,15 +70,23 @@
                   </div>
                 </div>
                 <div v-else class="tc mt5 mb7">
+                  <div class="title text-5xl active font-semibold mb-5">
+                    Welcome to Recall!
+                  </div>
+                  <div
+                    class="subtitle text-2xl font-medium max-w-sm m-auto mb-4 px-8"
+                  >
+                    To start using Recall just drag and drop your images here!
+                  </div>
+                  <div class="text-xs mb-5">
+                    You can also use the plus icon on the top right corner
+                  </div>
                   <div>
                     <img
                       alt="Upload your photos"
-                      src="@/assets/photo-stack.svg"
-                      width="200"
+                      src="@/assets/img/recall-how.jpg"
+                      width="410"
                     />
-                  </div>
-                  <div>
-                    <h1>Drop your photos here to upload</h1>
                   </div>
                 </div>
               </div>
@@ -129,3 +149,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.active {
+  color: #5e2ca5;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, 0.4);
+}
+</style>

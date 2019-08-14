@@ -20,6 +20,10 @@
   @apply font-normal py-2 px-4 rounded inline-flex bg-white border-black border-r border-b border-l border-grey-light border-t text-black items-center no-underline cursor-pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file. It also injects any utility classes registered by plugins.

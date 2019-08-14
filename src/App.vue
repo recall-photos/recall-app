@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="min-h-full relative">
     <TopMenu v-if="authenticated" />
     <router-view />
     <notifications group="errors" position="bottom right" />
@@ -30,8 +30,10 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 @import url('https://rsms.me/inter/inter.css');
 
-html {
+html,
+body {
   font-family: 'Inter', sans-serif;
+  height: 100%;
 }
 @supports (font-variation-settings: normal) {
   html {
