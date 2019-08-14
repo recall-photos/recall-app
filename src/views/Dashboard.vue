@@ -40,6 +40,20 @@
                   v-if="showModal"
                   @close="showModal = false"
                 />
+                <div class="flex items-center mb-10">
+                  <div
+                    class="rounded-full border border-gray-400 h-10 w-10 flex flex-wrap"
+                  >
+                    <img
+                      src="@/assets/photo.svg"
+                      alt="Photo icon"
+                      class="block mx-auto"
+                    />
+                  </div>
+                  <div class="text-standard font-medium text-2xl ml-2">
+                    Photos
+                  </div>
+                </div>
                 <div v-if="Object.keys(groupedPhotos).length != 0">
                   <div
                     v-for="date in Object.keys(groupedPhotos)
@@ -49,22 +63,15 @@
                   >
                     <div class="cf mb4">
                       <div class="f3 mb-3 font-medium">
-                        {{
-                          groupedPhotos[date].date.format('ddd, MMM DD YYYY')
-                        }}
+                        {{ groupedPhotos[date].date.format('Do MMMM YYYY') }}
                       </div>
-                      <div
-                        v-for="(photo, index) in groupedPhotos[date].photos"
-                        :key="photo.path"
-                      >
-                        <div
-                          v-bind:class="{
-                            'fl w-50': true,
-                            'w-25-ns': index != 4
-                          }"
-                        >
-                          <Photo :instance="photo" @open="openPhotoModal" />
-                        </div>
+                      <div class="flex flex-wrap">
+                        <Photo
+                          :instance="photo"
+                          @open="openPhotoModal"
+                          v-for="photo in groupedPhotos[date].photos"
+                          :key="photo.path"
+                        />
                       </div>
                     </div>
                   </div>

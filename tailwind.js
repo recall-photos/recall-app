@@ -46,6 +46,8 @@ const defaultConfig = require("tailwindcss/defaultConfig")();
 const colors = {
   transparent: "transparent",
 
+  standard: "#111111",
+
   black: "#22292f",
   "grey-darkest": "#3d4852",
   "grey-darker": "#606f7b",
@@ -655,7 +657,8 @@ module.exports = {
     "16": "4rem",
     "20": "5rem",
     "24": "6rem",
-    "32": "8rem"
+    "32": "8rem",
+    "64": "16rem"
   },
 
   /*

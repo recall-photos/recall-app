@@ -1,31 +1,32 @@
 <template>
-  <div class="photo" v-observe-visibility="visibilityChanged">
-    <Loading
-      :active.sync="loading"
-      :can-cancel="false"
-      :is-full-page="false"
-    ></Loading>
+  <div
+    class="photo pr-6 w-1/3 flex-initial"
+    v-observe-visibility="visibilityChanged"
+  >
+    <div class="relative overflow-hidden mb-6" style="height: 326px;">
+      <Loading
+        :active.sync="loading"
+        :can-cancel="false"
+        :is-full-page="false"
+      ></Loading>
 
-    <a
-      href="#"
-      @click="openModal"
-      class="db aspect-ratio aspect-ratio--1x1 photo-link"
-    >
-      <img
-        v-bind:src="compressedLocalImageURL || fullLocalImageURL"
-        style="position: absolute;left:0;top:0;width:100%;height: 100%;"
-        alt=""
-      />
-    </a>
+      <a href="#" @click="openModal" class="">
+        <img
+          v-bind:src="compressedLocalImageURL || fullLocalImageURL"
+          style="width: 100%; height: 100%; object-fit: cover;"
+          alt=""
+        />
+      </a>
 
-    <div class="photo-options ph2">
-      <div class="tc">
-        <a href="#" @click="downloadPhoto" class="icon dib white">
-          <font-awesome-icon icon="download" />
-        </a>
-        <a href="#" @click="remove" class="icon dib white">
-          <font-awesome-icon icon="trash" />
-        </a>
+      <div class="photo-options ph2">
+        <div class="tc">
+          <a href="#" @click="downloadPhoto" class="icon dib white">
+            <font-awesome-icon icon="download" />
+          </a>
+          <a href="#" @click="remove" class="icon dib white">
+            <font-awesome-icon icon="trash" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
