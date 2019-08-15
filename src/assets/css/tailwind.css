@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+/* Remove this line and improve accessibility */
+button:focus {
+  outline: 0;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file. It also injects any utility classes registered by plugins.

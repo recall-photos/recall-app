@@ -31,7 +31,9 @@
               v-smooth-scroll
               >How to get started</a
             >
-            <a class="btn font-bold hidden lg:block" @click="login">Sign in</a>
+            <button class="btn font-bold hidden lg:block" @click="login">
+              Sign in
+            </button>
           </div>
         </transition>
       </div>
