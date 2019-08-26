@@ -67,7 +67,12 @@ export default {
         anchor.href = this.fullLocalImageURL
         anchor.target = '_blank'
         anchor.download = this.instance.name
+        anchor.style.visibility = 'hidden'
+        if (!document.body.contains(anchor)) {
+          document.body.appendChild(anchor)
+        }
         anchor.click()
+        document.body.removeChild(anchor)
       } else {
         this.$store.commit('PhotoStore/loading', true)
         readFile(this.instance.path).then(data => {
@@ -79,7 +84,12 @@ export default {
             anchor.href = blob
             anchor.target = '_blank'
             anchor.download = this.instance.name
+            anchor.style.visibility = 'hidden'
+            if (!document.body.contains(anchor)) {
+              document.body.appendChild(anchor)
+            }
             anchor.click()
+            document.body.removeChild(anchor)
           })
         })
       }
