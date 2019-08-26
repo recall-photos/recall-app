@@ -1,6 +1,6 @@
 # Recall 📸
 
-![Dashboard](https://user-images.githubusercontent.com/407470/47449532-c7c0f280-d7ba-11e8-933e-09ece8ee0942.png)
+![Dashboard](https://raw.githubusercontent.com/recall-photos/recall-app/master/public/dashboard.jpg)
 
 *(This is still a working in progress so please do not use in production.)*
 
@@ -38,6 +38,8 @@ Lints and fixes files
 `yarn run lint`
 
 ### Guidelines
+
+All PRs and contributions are welcomed!
 
 Work in progress 🏗
 
